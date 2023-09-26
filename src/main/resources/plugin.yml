@@ -1,0 +1,22 @@
+name: AvalonCore
+version: '${version}'
+main: org.blestit.avaloncore.AvalonCore
+api-version: '1.19'
+prefix: AVALONCORE
+authors: [blestit]
+description: Special plugin for Provanas Avalon
+website: https://github.com/YunussEmree
+soft-depend: [ProtocolLib,PlaceholderAPI,MythicMobs]
+commands:
+  givegrapplinghook:
+    description: Gives Grappling Hook
+    usage: /<command>
+    permission: op
+  givesaklambactool:
+    description: Gives hideandseek tool
+    usage: /<command>
+    permission: op
+  ejderfix:
+    description: Teleport dragon to base
+    usage: /<command>
+    permission: avalon.ejderfix
