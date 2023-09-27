@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.*;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -353,7 +354,7 @@ public class spawn implements Listener {
     }
 
     //DRAGONA HASAR VERİLDİĞİNDE YAPILACAK ŞEYLER
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onDragonDamaged(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof EnderDragon) {
             EnderDragon dragon = (EnderDragon) event.getEntity();
@@ -662,6 +663,13 @@ public class spawn implements Listener {
                             }
                         }
 
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
+
+
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);
                             Bukkit.dispatchCommand(sender, "give " + key + " ender_pearl " + endgozsayi);
@@ -750,8 +758,11 @@ public class spawn implements Listener {
                             }
                         }
 
-
-
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
 
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);
@@ -840,7 +851,11 @@ public class spawn implements Listener {
                             }
                         }
 
-
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
 
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);
@@ -929,7 +944,11 @@ public class spawn implements Listener {
                             }
                         }
 
-
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
 
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);
@@ -1019,7 +1038,11 @@ public class spawn implements Listener {
                             }
                         }
 
-
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
 
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);
@@ -1108,7 +1131,11 @@ public class spawn implements Listener {
                             }
                         }
 
-
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
 
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);
@@ -1202,6 +1229,12 @@ public class spawn implements Listener {
                                 Bukkit.dispatchCommand(sender, "ecopets giveegg " + key + " enderdragonepic");
                                 weightMapi.put(key, weightMapi.get(key) - 450);
                             }
+                        }
+
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
                         }
 
                         if (weightMapi.get(key) >= 5) {
@@ -1299,7 +1332,11 @@ public class spawn implements Listener {
                             }
                         }
 
-
+                        if (weightMapi.get(key) >= 100) {
+                            int endbuygozsayi = (int) Math.floor(weightMapi.get(key) / 100);
+                            Bukkit.dispatchCommand(sender, "mi give TOOL ENDER_PEARL " + key + " " + endbuygozsayi);
+                            weightMapi.put(key, weightMapi.get(key) - (endbuygozsayi * 100));
+                        }
 
                         if (weightMapi.get(key) >= 5) {
                             int endgozsayi = (int) Math.floor(weightMapi.get(key) / 5);

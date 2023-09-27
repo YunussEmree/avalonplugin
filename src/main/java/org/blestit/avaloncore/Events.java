@@ -871,7 +871,6 @@ public class Events implements Listener {
                 @Override
                 public void run() {
                     String mobname = event.getEntity().getCustomName();
-                    String mobad = event.getEntity().getName();
                     List<String> fishmobs = plugin.getConfig().getStringList("sumobslist");
 
                     for (String fishmob : fishmobs) {
