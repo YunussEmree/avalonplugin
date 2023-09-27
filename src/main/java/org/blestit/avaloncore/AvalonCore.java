@@ -29,7 +29,6 @@ import static org.blestit.avaloncore.Dragon.spawn.*;
 
 import static me.clip.placeholderapi.PlaceholderAPI.setPlaceholders;
 import static org.blestit.avaloncore.Dragon.spawn.killthedragon;
-import static org.blestit.avaloncore.Statics.afterrestartcommands.yayfix;
 
 public final class AvalonCore extends JavaPlugin {
 
@@ -49,7 +48,6 @@ public final class AvalonCore extends JavaPlugin {
 
         ItemManager.init();
 
-        yayfix(this);
 
         new PAPI(this).register();
 
@@ -79,6 +77,8 @@ public final class AvalonCore extends JavaPlugin {
         this.setupPermissions();
         this.setupEconomy();
         this.registerAll();
+
+        ecorestart();
     }
 
     @Override

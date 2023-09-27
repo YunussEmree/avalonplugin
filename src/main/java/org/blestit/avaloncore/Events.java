@@ -549,6 +549,8 @@ public class Events implements Listener {
                 Bukkit.dispatchCommand(cs, "spawn " + player.getName());
             }
         }
+
+
         @EventHandler
         public void zindanfix2(EntityDamageByEntityEvent event){
             if(event.getDamager() instanceof Player){
@@ -682,8 +684,12 @@ public class Events implements Listener {
             World world = event.getEntity().getWorld();
             int chance = plugin.getConfig().getInt("nerfphantom.nerfrate");
             if(world.equals("bskyblock_world")){
-                if(Math.random() * 100 > chance){
-                    event.setCancelled(true);
+                if(event.getEntity() instanceof Phantom){
+                    if(Math.random() * 100 <= chance) {
+
+                        event.setCancelled(true);
+
+                    }
                 }
             }
         }
@@ -693,7 +699,7 @@ public class Events implements Listener {
         public void damagefix(EntityDamageEvent event){
             Entity entity = event.getEntity();
             if(entity instanceof Player){
-                if(event.getCause() == EntityDamageEvent.DamageCause.FALL || event.getCause() == EntityDamageEvent.DamageCause.DROWNING || event.getCause() == EntityDamageEvent.DamageCause.FIRE || event.getCause() == EntityDamageEvent.DamageCause.LAVA || event.getCause() == EntityDamageEvent.DamageCause.DRAGON_BREATH){
+                if(event.getCause() == EntityDamageEvent.DamageCause.FALL || event.getCause() == EntityDamageEvent.DamageCause.DROWNING || event.getCause() == EntityDamageEvent.DamageCause.DRAGON_BREATH){
                     Damageable player = (Player) event.getEntity();
 
                     if(player.getMaxHealth() >= 600) player.damage(50);
