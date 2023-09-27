@@ -55,6 +55,7 @@ public class Events implements Listener {
         String nopermtext = this.plugin.getConfig().getString("grapplinghook.nopermtext");
         int airvelocity = this.plugin.getConfig().getInt("grapplinghook.velocity.air.onairvelocity");
         int airyvelocity = this.plugin.getConfig().getInt("grapplinghook.velocity.air.onairsety");
+        String cooldowntext = plugin.getConfig().getString("grapplinghook.cooldowntext");
         Player player = event.getPlayer();
         if (!event.getPlayer().getWorld().getName().equals("world")) {
             if (player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains(ChatColor.GRAY + "Kancayı kullanarak etrafta gezebilirsiniz.")) {
@@ -64,7 +65,8 @@ public class Events implements Listener {
                             int secondsLeft = (int) (((grapplinghookcooldown.get(player.getName()) / 1000) + cooldownTime) - (System.currentTimeMillis() / 1000));
                             if (secondsLeft > 0) {
                                 // Still cooling down
-                                player.sendMessage(ChatColor.RED + "Biraz yavaşla! Şu kadar süre sonra tekrar dene: " + secondsLeft);
+
+                                player.sendMessage(prefix + cooldowntext);
                                 return;
                             }
                         }
@@ -104,7 +106,8 @@ public class Events implements Listener {
                                 int secondsLeft = (int) (((grapplinghookcooldown.get(player.getName()) / 1000) + cooldownTime) - (System.currentTimeMillis() / 1000));
                                 if (secondsLeft > 0) {
                                     // Still cooling down
-                                    player.sendMessage(ChatColor.RED + "Biraz yavaşla! Şu kadar süre sonra tekrar dene: " + secondsLeft);
+
+                                    player.sendMessage(prefix + cooldowntext);
 
                                     return;
                                 }
