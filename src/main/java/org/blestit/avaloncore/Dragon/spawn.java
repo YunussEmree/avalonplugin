@@ -198,24 +198,26 @@ public class spawn implements Listener {
         return bar;
     }
 
-    public static void killthedragon(){
-        if(bizimDragon != null && bizimDragon.getHealth() > 0) {
-            ConsoleCommandSender cs = Bukkit.getConsoleSender();
-            Bukkit.dispatchCommand(cs, "minecraft:kill @e[type=minecraft:ender_dragon]");
+    public static void killthedragon() {
+        if (bizimDragon != null) {
+            if (bizimDragon.getHealth() > 0) {
+                ConsoleCommandSender cs = Bukkit.getConsoleSender();
+                Bukkit.dispatchCommand(cs, "minecraft:kill @e[type=minecraft:ender_dragon]");
 
-            dragonAnlikCan = 0;
+                dragonAnlikCan = 0;
 
-            bizimBossBar.removeAll();
+                bizimBossBar.removeAll();
 
-            for (Location bizimAltar : bizimAltarlar) {
-                EndPortalFrame çerçeve = (EndPortalFrame) bizimAltar.getBlock().getBlockData();
-                çerçeve.setEye(false);
-                bizimAltar.getBlock().setBlockData(çerçeve);
+                for (Location bizimAltar : bizimAltarlar) {
+                    EndPortalFrame çerçeve = (EndPortalFrame) bizimAltar.getBlock().getBlockData();
+                    çerçeve.setEye(false);
+                    bizimAltar.getBlock().setBlockData(çerçeve);
+                }
+
+                createstatictik(DragonDamager);
+
+                Bukkit.broadcastMessage("§8[§6Avalon§8] §cEjderha düzgün bir şekilde öldürülemediği için ödüller verilmiyor...");
             }
-
-            createstatictik(DragonDamager);
-
-            Bukkit.broadcastMessage("§8[§6Avalon§8] §cEjderha düzgün bir şekilde öldürülemediği için ödüller verilmiyor...");
         }
     }
 

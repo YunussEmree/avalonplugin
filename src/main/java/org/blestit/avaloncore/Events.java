@@ -49,7 +49,7 @@ public class Events implements Listener {
 
 
         @EventHandler
-        public void onFish(PlayerFishEvent event) {
+        public void GrapplingHookAir(PlayerFishEvent event) {
             int cooldownTime = 2;
         String prefix = this.plugin.getConfig().getString("grapplinghook.prefix");
         String nopermtext = this.plugin.getConfig().getString("grapplinghook.nopermtext");
@@ -84,7 +84,7 @@ public class Events implements Listener {
 
 
         @EventHandler
-        public void onLand(PlayerFishEvent event) {
+        public void GrapplingHookLand(PlayerFishEvent event) {
             int cooldownTime = 2;
 
             String prefix = plugin.getConfig().getString("grapplinghook.prefix");
@@ -224,7 +224,7 @@ public class Events implements Listener {
 
         //PUŞTLARI BANLAMA V1 (KÖYLÜ TRADE)
         @EventHandler
-        public void ontakas(PlayerInteractAtEntityEvent event) {
+        public void disablevillagertrade(PlayerInteractAtEntityEvent event) {
             Player player = event.getPlayer();
             if (player.getLocation().getWorld().equals("bskyblock_world")) {
                 if (!player.hasPermission("avalon.bypasstradecontrol")) {
@@ -242,7 +242,7 @@ public class Events implements Listener {
 
         //PUŞTLARI BANLAMA V2 (MERCAN FARM)
         @EventHandler
-        public void onmercanplace(BlockPlaceEvent event) {
+        public void disablemercanfarm(BlockPlaceEvent event) {
             Player player = event.getPlayer();
             String playername = event.getPlayer().getName();
             Block block = event.getBlockPlaced();
@@ -263,13 +263,13 @@ public class Events implements Listener {
 
 
         @EventHandler
-        public void onleave(PlayerQuitEvent event){
+        public void disablequitmessage(PlayerQuitEvent event){
             event.setQuitMessage("");
         }
 
         //VIP Renk Sorunu Fix
         @EventHandler
-        public void onjoin(PlayerJoinEvent event) {
+        public void AFK(PlayerJoinEvent event) {
 
             event.setJoinMessage("");
 
@@ -279,21 +279,23 @@ public class Events implements Listener {
                 public void run() {
 
                     String world1 = (player.getWorld().getName());
-                    if(world1.equals("opskymap")) {
-                        World world = Bukkit.getServer().getWorld("opskymap");
+                    if(world1.equals("AvalonMap")) {
+                        World world = Bukkit.getServer().getWorld("AvalonMap");
                         assert world != null;
                         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
                         RegionManager regions = container.get(BukkitAdapter.adapt(world));
                         assert regions != null;
-                        ProtectedRegion region = regions.getRegion("spawnnoktasi");
+                        ProtectedRegion region = regions.getRegion("afkrg");
                         assert region != null;
                         if (region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))) {
+
                             World eventdunya = Bukkit.getServer().getWorld("world");
                             Location loc1 = new Location(eventdunya, 1186, 46, -1218);
                             Location loc2 = new Location(eventdunya, 1181, 46, -1218);
                             Location loc3 = new Location(eventdunya, 1181, 46, -1213);
                             Location loc4 = new Location(eventdunya, 1186, 46, -1213);
 
+                            player.sendTitle(ChatColor.RED + "Şu an afk'sın", ChatColor.RED + "Merkez adaya dönmek için /spawn", 1,200,1);
                             double olasilik = (Math.random()*100);
                             if(olasilik < 25 ) player.teleport(loc1);
                             else if(olasilik < 50 ) player.teleport(loc2);
@@ -569,7 +571,7 @@ public class Events implements Listener {
 
         //menu open
         @EventHandler
-        public void onitemswap(PlayerSwapHandItemsEvent event) {
+        public void openmenuwithf(PlayerSwapHandItemsEvent event) {
             int cooldownTime = 2;
             Player player = event.getPlayer();
 
@@ -797,7 +799,7 @@ public class Events implements Listener {
     }
 
     @EventHandler
-    public void onInteract(PlayerInteractEntityEvent event) {
+    public void SaklambacTool(PlayerInteractEntityEvent event) {
         int cooldownTime = 4;
         String prefix = plugin.getConfig().getString("saklambactool.text.prefix");
         String ebeledin = plugin.getConfig().getString("saklambactool.text.ebeledin");
