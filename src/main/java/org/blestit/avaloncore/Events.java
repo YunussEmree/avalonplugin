@@ -874,18 +874,19 @@ public class Events implements Listener {
                     List<String> fishmobs = plugin.getConfig().getStringList("sumobslist");
 
                     for (String fishmob : fishmobs) {
-                        assert mobname != null;
-                        if (mobname.contains(fishmob)) {
-                            Damageable mob = event.getEntity();
+                        if(mobname != null) {
+                            if (mobname.contains(fishmob)) {
+                                Damageable mob = event.getEntity();
 
 
-                            Location loc = new Location(mob.getWorld(), mob.getLocation().getX(), -1000, mob.getLocation().getZ());
-                            //If mob dead with no teleport, mob dropping rewards
-                            mob.teleport(loc);
+                                Location loc = new Location(mob.getWorld(), mob.getLocation().getX(), -1000, mob.getLocation().getZ());
+                                //If mob dead with no teleport, mob dropping rewards
+                                mob.teleport(loc);
 
-                            //mob.setHealth(0);
+                                //mob.setHealth(0);
 
-                            event.setCancelled(true);
+                                event.setCancelled(true);
+                            }
                         }
                     }
                 }
