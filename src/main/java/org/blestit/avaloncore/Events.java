@@ -85,9 +85,8 @@ public class Events implements Listener {
 
         @EventHandler
         public void GrapplingHookLand(PlayerFishEvent event) {
-            int cooldownTime = 2;
-
             String prefix = plugin.getConfig().getString("grapplinghook.prefix");
+            int cooldownTime = 2;
             String cooldowntext = plugin.getConfig().getString("grapplinghook.cooldowntext");
             String nopermtext = plugin.getConfig().getString("grapplinghook.nopermtext");
             double landvelocity = plugin.getConfig().getDouble("grapplinghook.velocity.land.onlandvelocity");
@@ -854,4 +853,45 @@ public class Events implements Listener {
         }
     }
 
+    @EventHandler
+    public void MythicMobeggban(PlayerInteractEvent event){
+        if(event.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.PIG_SPAWN_EGG)){
+            if(!event.getPlayer().getWorld().getName().equalsIgnoreCase("bskyblock_world")){
+                event.setCancelled(true);
+                Player player = event.getPlayer();
+                if(Objects.equals(event.getHand(), EquipmentSlot.HAND)) player.sendMessage("§7[§6Avalon§7] " + ChatColor.RED + "Bu yumurtayı oyuncu adası dışında başka bir yerde kullanamazsınız!");
+            }
+        }
+    }
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void MythicMobdespawn(CreatureSpawnEvent event){
+
+        if(!event.getEntity().getWorld().getName().equalsIgnoreCase("bskyblock_world")) {
+            Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
+                @Override
+                public void run() {
+                    String mobname = event.getEntity().getCustomName();
+                    String mobad = event.getEntity().getName();
+                    List<String> fishmobs = plugin.getConfig().getStringList("sumobslist");
+
+                    for (String fishmob : fishmobs) {
+                        assert mobname != null;
+                        if (mobname.contains(fishmob)) {
+                            Damageable mob = event.getEntity();
+
+
+                            Location loc = new Location(mob.getWorld(), mob.getLocation().getX(), -1000, mob.getLocation().getZ());
+                            //If mob dead with no teleport, mob dropping rewards
+                            mob.teleport(loc);
+
+                            //mob.setHealth(0);
+
+                            event.setCancelled(true);
+                        }
+                    }
+                }
+            }, 5);
+
+        }
+    }
 }

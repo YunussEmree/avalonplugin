@@ -117,5 +117,22 @@ firstjoinmessages:
     - "§7[§6Avalon§7] &6İlk &3Kral&6 adayına hoşgeldin diyin. Selamlar &a%player%&6! &cOyuncu Sırası: #%playersize%"
 
 
-#sumobslist: ["",""]
+sumobslist:
+  - "Deniz İmparatoru"
+  - "Suda Yürüyen"
+  - "Kum Canavarı"
+  - "Kil Canavarı"
+  - "Su Gardiyanı"
+  - "Su Cadısı"
+  - "Su Okçusu"
+  - "Derin Katil"
+  - "Su Kedisi"
+  - "Havuç Kral"
+  - "Gümüş Balığı"
+  - "Deniz Golemi"
+  - "Su Kralı"
+  - "Yeti"
+  - "Buz Kurdu"
+  - "Mürekkep Balığı"
+  - "Donmuş Zombi"
 
