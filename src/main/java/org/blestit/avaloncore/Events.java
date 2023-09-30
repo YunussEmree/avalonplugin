@@ -394,94 +394,88 @@ public class Events implements Listener {
 
             if(command.contains("warp")){
                 if(!player.isOp()) {
-                    World world = Bukkit.getServer().getWorld("opskymap");
-                    RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
-                    assert world != null;
-                    RegionManager regions = container.get(BukkitAdapter.adapt(world));
-                    assert regions != null;
-
-
-
-
-                    //çiftlik adaları
-                    if (command.equalsIgnoreCase("/warp ciftlikqwezxc") || command.equalsIgnoreCase("/warp mantarcolucikisqwezxc")) {
-                        ProtectedRegion ciftlik = regions.getRegion("ciftlikcikis");
-                        ProtectedRegion mantarcolucikis = regions.getRegion("farm2portal");
-                        if (!player.hasPermission("avalon.portal.ciftlik") && !(Objects.requireNonNull(mantarcolucikis).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())) || Objects.requireNonNull(ciftlik).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())))){
+                    if (command.equalsIgnoreCase("/warp ciftlik")) {
+                        if (!player.hasPermission("warp.vip")){
                             event.setCancelled(true);
                         }
                     }
-                    if (command.equalsIgnoreCase("/warp mantarcoluqwezxc")) {
-                        ProtectedRegion region = regions.getRegion("farm2portalgecis");
-                        if (!player.hasPermission("avalon.portal.mantarcolu") && (!Objects.requireNonNull(region).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())))) {
+                    if (command.equalsIgnoreCase("/warp mantarcolu")) {
+                        if (!player.hasPermission("warp.vip") || !player.hasPermission("warp.vip1")){
                             event.setCancelled(true);
                         }
-
                     }
 
-                    //maden adaları
-                    if (command.equalsIgnoreCase("/warp maden1qwezxc") || command.equalsIgnoreCase("/warp maden2cikisqwezxc")) {
-                        ProtectedRegion maden1 = regions.getRegion("maden1gecisportal");
-                        ProtectedRegion maden2cikis = regions.getRegion("maden2portal");
-                        if (!player.hasPermission("avalon.portal.altinmaden") && (!Objects.requireNonNull(maden1).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())) || !Objects.requireNonNull(maden2cikis).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))))   event.setCancelled(true);
-
-                    }
-                    if (command.equalsIgnoreCase("/warp maden2qwezxc")) {
-                        ProtectedRegion region = regions.getRegion("maden2gecis");
-                        if (!player.hasPermission("avalon.portal.derinmagara") && (!Objects.requireNonNull(region).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))))   event.setCancelled(true);
-
+                    if (command.equalsIgnoreCase("/warp orman")) {
+                        if (!player.hasPermission("warp.vip")){
+                            event.setCancelled(true);
+                        }
                     }
 
-                    //orman adası
-                    if (command.equalsIgnoreCase("/warp ormanqwezxc")) {
-                        ProtectedRegion region = regions.getRegion("ormangiris");
-                        if (!player.hasPermission("avalon.portal.orman") && (!Objects.requireNonNull(region).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))))  event.setCancelled(true);
-
+                    if (command.equalsIgnoreCase("/warp ciftlik")) {
+                        if (!player.hasPermission("warp.vip")){
+                            event.setCancelled(true);
+                        }
                     }
 
-                    //combat adaları
-                    if (command.equalsIgnoreCase("/warp orumcekyuvasiqwezxc") || command.equalsIgnoreCase("/warp nethercikisqwezxc") || command.equalsIgnoreCase("/warp endcikisqwezxc")) {
-                        ProtectedRegion spawnportal = regions.getRegion("zombi");
-                        ProtectedRegion endcikis = regions.getRegion("endportal");
-                        ProtectedRegion nethercikis = regions.getRegion("netherportal");
-                        if (!player.hasPermission("avalon.portal.orumcekyuvasi") && (!Objects.requireNonNull(spawnportal).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())) || !Objects.requireNonNull(endcikis).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())) || !Objects.requireNonNull(nethercikis).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))))     event.setCancelled(true);
-
-                    }
-                    if (command.equalsIgnoreCase("/warp netherqwezxc")) {
-                        ProtectedRegion region = regions.getRegion("nethercikis");
-                        if (!player.hasPermission("avalon.portal.nether") && (!Objects.requireNonNull(region).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))))   event.setCancelled(true);
-
-                    }
-                    if (command.equalsIgnoreCase("/warp endqwezxc")) {
-                        ProtectedRegion region = regions.getRegion("endgiris");
-                        if (!player.hasPermission("avalon.portal.end") && (!Objects.requireNonNull(region).contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())))) event.setCancelled(true);
-
-                    }
-/*
-                //özel odalar (sonradan kullanılabilir)
-                if (command.equalsIgnoreCase("/warp dragonroom")) {
-                    if(!player.hasPermission("avalon.portal.dragonroom")) event.setCancelled(true);
-                }
-                if (command.equalsIgnoreCase("/warp magmaboss")) {
-                    if(!player.hasPermission("avalon.portal.magmaboss")) event.setCancelled(true);
-                }
-                if (command.equalsIgnoreCase("/warp questroom")) {
-                    if(!player.hasPermission("avalon.portal.questroom")) event.setCancelled(true);
-                }
-*/
-                    //derin mağara katları
-                    if(command.equalsIgnoreCase("/warp altinmadenqwezxc") || command.equalsIgnoreCase("/warp lapismadenqwezxc") || command.equals("/warp kiziltasmadenqwezxc") || command.equals("/warp zumrutmadenqwezxc") || command.equals("/warp elmasmadenqwezxc") || command.equals("/warp obsidyenmadenqwezxc")){
-                        ProtectedRegion region = regions.getRegion("maden2");
-                        assert region != null;
-                        if (!region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))) event.setCancelled(true);
+                    if (command.equalsIgnoreCase("/warp maden")) {
+                        if (!player.hasPermission("warp.vip") && !player.hasPermission("warp.vip1")){
+                            event.setCancelled(true);
+                        }
                     }
 
-                    //buz map
-                    if (command.equalsIgnoreCase("/warp buzmap6545643524")) {
-                        ProtectedRegion region = regions.getRegion("buzportal");
-                        assert region != null;
-                        if (!region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))) event.setCancelled(true);
+                    if (command.equalsIgnoreCase("/warp orumcekyuvasi")) {
+                        if (!player.hasPermission("warp.vip") && !player.hasPermission("warp.vip1")){
+                            event.setCancelled(true);
+                        }
+                    }
 
+                    if (command.equalsIgnoreCase("/warp nether")) {
+                        if (!player.hasPermission("warp.vip") && !player.hasPermission("warp.vip1") && !player.hasPermission("warp.vip2")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if (command.equalsIgnoreCase("/warp end")) {
+                        if (!player.hasPermission("warp.vip") && !player.hasPermission("warp.vip1") && !player.hasPermission("warp.vip2")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if (command.equalsIgnoreCase("/warp sualti")) {
+                        if (!player.hasPermission("warp.vip") && !player.hasPermission("warp.vip1") && !player.hasPermission("warp.vip2")  && !player.hasPermission("warp.vip3")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+
+                    if (command.equalsIgnoreCase("/warp dragonroom")) {
+                        if (!player.hasPermission("provanasvip") ){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if (command.equalsIgnoreCase("/warp magmaboss")) {
+                        if (!player.hasPermission("provanasvip") ){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if (command.equalsIgnoreCase("/warp questroom")) {
+                        if (!player.hasPermission("provanasvip") ){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if (command.equalsIgnoreCase("/warp buzmap")) {
+                        if (!player.hasPermission("buzmap.giris") ){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if (command.equalsIgnoreCase("/warp firelands")) {
+                        if (!player.hasPermission("provanasvip") ){
+                            event.setCancelled(true);
+                        }
                     }
 
                 }
