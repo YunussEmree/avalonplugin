@@ -1001,4 +1001,12 @@ public class Events implements Listener {
 
         }
     }
+
+    @EventHandler
+    public void oncubesplit(SlimeSplitEvent event){
+        if(event.getEntity().getWorld().getName().equalsIgnoreCase("AvalonMap")){
+            event.setCancelled(true);
+        }
+    }
+
 }
