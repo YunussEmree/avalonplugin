@@ -478,9 +478,122 @@ public class Events implements Listener {
                         }
                     }
 
+                    //Zindan
+                    if(command.equalsIgnoreCase("/warp zindankat2")){
+                        if(!player.hasPermission("essentials.warps.zindankat2")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat3")){
+                        if(!player.hasPermission("essentials.warps.zindankat3")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat4")){
+                        if(!player.hasPermission("essentials.warps.zindankat4")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat5")){
+                        if(!player.hasPermission("essentials.warps.zindankat5")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat6")){
+                        if(!player.hasPermission("essentials.warps.zindankat6")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat7")){
+                        if(!player.hasPermission("essentials.warps.zindankat7")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat8")){
+                        if(!player.hasPermission("essentials.warps.zindankat8")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat9")){
+                        if(!player.hasPermission("essentials.warps.zindankat9")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat10")){
+                        if(!player.hasPermission("essentials.warps.zindankat10")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat11")){
+                        if(!player.hasPermission("essentials.warps.zindankat11")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat12")){
+                        if(!player.hasPermission("essentials.warps.zindankat12")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat13")){
+                        if(!player.hasPermission("essentials.warps.zindankat13")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat14")){
+                        if(!player.hasPermission("essentials.warps.zindankat14")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat15")){
+                        if(!player.hasPermission("essentials.warps.zindankat15")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat16")){
+                        if(!player.hasPermission("essentials.warps.zindankat16")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat17")){
+                        if(!player.hasPermission("essentials.warps.zindankat17")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat18")){
+                        if(!player.hasPermission("essentials.warps.zindankat18")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat19")){
+                        if(!player.hasPermission("essentials.warps.zindankat19")){
+                            event.setCancelled(true);
+                        }
+                    }
+
+                    if(command.equalsIgnoreCase("/warp zindankat20")){
+                        if(!player.hasPermission("essentials.warps.zindankat20")){
+                            event.setCancelled(true);
+                        }
+                    }
                 }
             }
-
         }
 
         //2 el ile güç bugunu kaldırma
