@@ -1,16 +1,35 @@
-# Avalon config v1.3.4
-# Eklenti sahibi _KatilCivciv_ dir. Provanas Skyblock Avalon harici bir bölümde/sunucuda kullanılması yasaktır.
+# Eklenti sahibi YunussEmree/blestit dir. Provanas Skyblock Avalon harici bir bölümde/sunucuda kullanılması yasaktır.
 #
-# Eklentinin güncel versiyonu eklendiyse bu dosyayı silip oyun içi reload atınız.
-# Aksi takdirde yeni özellikler çalışmayacaktır.
-# Eğer lore a "§b§lDEBUG MODE" eklerseniz vurduğunuz hasarı sadece sizin görebileceğiniz bir mesaj şeklinde gönderir.
-# !!!DİKKAT!!!  ->  & işareti bozuyor. Onun yerine § kullanın.
-# Eklentinin düzgün çalışması için "ProtocolLib-4.8.0-SNAPSHOT" kullanmanız gerekmektedir.
+
+autoevent:
+  monday:
+    - ""
+    - ""
+  tuesday:
+    - ""
+    - ""
+  wednesday:
+    - ""
+    - ""
+  thursday:
+    - ""
+    - ""
+  friday:
+    - ""
+    - ""
+  saturday:
+    - ""
+    - ""
+  sunday:
+    - ""
+    - ""
+
+
+
 nerfphantom:
   nerfrate: 90
   #100 -> no phantom
   #0 -> no nerf
-  #Galiba bu bozuk aq
 
 dragon:
   #usbc nin ilk recode aşamaları... Dragon ayarları
