@@ -1,5 +1,5 @@
 name: AvalonCore
-version: '2.1.0'
+version: '2.1.1'
 main: org.blestit.avaloncore.AvalonCore
 api-version: '1.19'
 prefix: AVALONCORE
@@ -20,3 +20,15 @@ commands:
     description: Teleport dragon to base
     usage: /<command>
     permission: avalon.ejderfix
+  kapikapa:
+    description: test command
+    usage: /<command>
+    permission: op
+  kapiac:
+    description: test command
+    usage: /<command>
+    permission: op
+  eventstart:
+    description: test command
+    usage: /<command>
+    permission: op

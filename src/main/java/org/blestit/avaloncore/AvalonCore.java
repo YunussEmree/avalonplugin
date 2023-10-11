@@ -69,9 +69,12 @@ public final class AvalonCore extends JavaPlugin {
         System.out.println(ChatColor.GREEN + "[AVALON] Eklenti Aktif!");
 
 
-        getCommand("givesaklambactool").setExecutor(new CommandHandler());
-        getCommand("givegrapplinghook").setExecutor(new CommandHandler());
-        getCommand("ejderfix").setExecutor(new CommandHandler());
+        getCommand("givesaklambactool").setExecutor(new CommandHandler(this));
+        getCommand("givegrapplinghook").setExecutor(new CommandHandler(this));
+        getCommand("ejderfix").setExecutor(new CommandHandler(this));
+        getCommand("kapikapa").setExecutor(new CommandHandler(this));
+        getCommand("kapiac").setExecutor(new CommandHandler(this));
+        getCommand("eventstart").setExecutor(new CommandHandler(this));
 
         this.saveDefaultConfig();
 

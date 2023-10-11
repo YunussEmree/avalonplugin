@@ -19,20 +19,20 @@ public class Runner implements Listener {
     List<Player> playersinevent;
 
 
-    public Runner(AvalonCore plugin){
+    public void Start(AvalonCore plugin) {
 
         Collection<? extends Player> players = Objects.requireNonNull(plugin.getServer().getOnlinePlayers());
 
-        for (Player player : players){
-         player.sendTitle("§6§lEtkinlik başlıyor!", "§6/warp kosu", 1, 100, 1);
-         player.playSound(player, Sound.ENTITY_DRAGON_FIREBALL_EXPLODE, 200, 1);
+        for (Player player : players) {
+            player.sendTitle("§6§lEtkinlik başlıyor!", "§6/warp kosu", 1, 100, 1);
+            player.playSound(player, Sound.ENTITY_DRAGON_FIREBALL_EXPLODE, 200, 1);
         }
 
         Bukkit.broadcastMessage("§6Set kullanmak/İksir kullanmak/Blok bugu yapmak/Morgause kılıcı kullanmak §cyasaktır!!!");
 
         Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
             public void run() {
-                for (Player player : players){
+                for (Player player : players) {
                     player.sendTitle("§6§lEtkinlik başlıyor!", "§6/warp kosu", 1, 100, 1);
                     player.playSound(player, Sound.ENTITY_DRAGON_FIREBALL_EXPLODE, 200, 1);
                 }
@@ -47,13 +47,14 @@ public class Runner implements Listener {
 
                 new BukkitRunnable() {
                     int i = 3;
+
                     public void run() {
                         if (i < 0) cancel();
                         if (i == 0) {
                             openthedoors(plugin);
                         } else if (i != -1) {
-                            for (Player activeplayer : playersinevent){
-                                activeplayer.sendTitle("§c" + i , "", 1, 20, 1);
+                            for (Player activeplayer : playersinevent) {
+                                activeplayer.sendTitle("§c" + i, "", 1, 20, 1);
                             }
                         }
                         i--;
@@ -66,7 +67,7 @@ public class Runner implements Listener {
 
     }
 
-    public void openthedoors(AvalonCore plugin){
+    public static void openthedoors(AvalonCore plugin){
         ArrayList<String> pistons = new ArrayList<>(plugin.getConfig().getStringList("runner.pistons"));
         ArrayList<Location> pistonlocs = new ArrayList<>();
         for (String piston : pistons) {
@@ -84,6 +85,9 @@ public class Runner implements Listener {
     public static void closethedoors(AvalonCore plugin){
         ArrayList<String> pistons = new ArrayList<>(plugin.getConfig().getStringList("runner.pistons"));
         ArrayList<Location> pistonlocs = new ArrayList<>();
+
+        //PistonHead pistonHead = (PistonHead) Objects.requireNonNull(plugin.getServer().getWorld("event")).getBlockAt(1, 1, 1);
+
         for (String piston : pistons) {
             String[] kordinatlar = piston.split(" ");
             Location lokasyon = new Location(Bukkit.getWorld("event"), Double.parseDouble(kordinatlar[0]), Double.parseDouble(kordinatlar[1]), Double.parseDouble(kordinatlar[2]));
