@@ -77,11 +77,23 @@ public class Runner implements Listener {
 
         for(Location piston : pistonlocs){
             Piston gettedpiston = (Piston)piston.getBlock().getBlockData();
-
             gettedpiston.setExtended(false);
         }
+    }
 
+    public void closethedoors(AvalonCore plugin){
+        ArrayList<String> pistons = new ArrayList<>(plugin.getConfig().getStringList("runner.pistons"));
+        ArrayList<Location> pistonlocs = new ArrayList<>();
+        for (String piston : pistons) {
+            String[] kordinatlar = piston.split(" ");
+            Location lokasyon = new Location(Bukkit.getWorld("event"), Double.parseDouble(kordinatlar[0]), Double.parseDouble(kordinatlar[1]), Double.parseDouble(kordinatlar[2]));
+            pistonlocs.add(lokasyon);
+        }
 
+        for(Location piston : pistonlocs){
+            Piston gettedpiston = (Piston)piston.getBlock().getBlockData();
+            gettedpiston.setExtended(true);
+        }
     }
 
 
