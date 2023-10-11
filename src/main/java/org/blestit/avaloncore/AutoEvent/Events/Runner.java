@@ -13,8 +13,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Level;
 
 public class Runner implements Listener {
+
 
     List<Player> playersinevent;
 
@@ -43,7 +45,20 @@ public class Runner implements Listener {
 
         Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
             public void run() {
-                playersinevent = Objects.requireNonNull(plugin.getServer().getWorld("event")).getPlayers();
+                if (plugin.getServer().getWorld("world") == null) {
+                    plugin.getLogger().log(Level.WARNING, "Koşu eventi için dünya bulunamadı.");
+                    return;
+                }
+
+
+                try {
+                    playersinevent = (plugin.getServer().getWorld("world")).getPlayers();
+                } catch (NullPointerException e){
+                    plugin.getLogger().log(Level.WARNING, "Koşu eventi için oyuncu bulunamadı.");
+                    return;
+
+                }
+
 
                 new BukkitRunnable() {
                     int i = 3;
