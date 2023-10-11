@@ -50,7 +50,7 @@ public class Runner implements Listener {
                     public void run() {
                         if (i < 0) cancel();
                         if (i == 0) {
-                            //start the event
+                            openthedoors(plugin);
                         } else if (i != -1) {
                             for (Player activeplayer : playersinevent){
                                 activeplayer.sendTitle("§c" + i , "", 1, 20, 1);
@@ -81,7 +81,7 @@ public class Runner implements Listener {
         }
     }
 
-    public void closethedoors(AvalonCore plugin){
+    public static void closethedoors(AvalonCore plugin){
         ArrayList<String> pistons = new ArrayList<>(plugin.getConfig().getStringList("runner.pistons"));
         ArrayList<Location> pistonlocs = new ArrayList<>();
         for (String piston : pistons) {

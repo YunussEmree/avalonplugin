@@ -16,6 +16,7 @@ import com.sk89q.worldguard.protection.regions.RegionContainer;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import org.blestit.avaloncore.AutoEvent.Events.Runner;
 import org.blestit.avaloncore.Dragon.spawn;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
@@ -85,6 +86,7 @@ public final class AvalonCore extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         killthedragon();
+        Runner.closethedoors(this);
     }
     public void registerAll() {
         PluginManager pm = this.getServer().getPluginManager();
