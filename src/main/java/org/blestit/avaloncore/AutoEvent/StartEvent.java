@@ -1,5 +1,6 @@
 package org.blestit.avaloncore.AutoEvent;
 
+import org.blestit.avaloncore.AutoEvent.Events.DarkAuction;
 import org.blestit.avaloncore.AvalonCore;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -39,6 +40,11 @@ public class StartEvent {
                 public void run() {
                     for (String command : ingameCommands) {
                         plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), command);
+
+                       // DarkAuction darkAuction = new DarkAuction();
+                       // darkAuction.Start(plugin);
+
+
                     }
                 }
             }.runTaskTimer(plugin, millis / 50, 20 * 60 * 60 * 24);
