@@ -15,10 +15,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 
-public class Runner implements Listener {
-
-
+public class Parkour implements Listener {
     private List<Player> playersinevent;
+
+
 
 
     public void Start(AvalonCore plugin) {
@@ -66,7 +66,7 @@ public class Runner implements Listener {
                     public void run() {
                         if (i < 0) cancel();
                         if (i == 0) {
-                            opentherunnerdoors(plugin);
+                            opentheparkourdoors(plugin);
                         } else if (i != -1) {
                             for (Player activeplayer : playersinevent) {
                                 activeplayer.sendTitle("§c" + i, "", 1, 20, 1);
@@ -82,7 +82,7 @@ public class Runner implements Listener {
 
     }
 
-    public static void opentherunnerdoors(AvalonCore plugin){
+    public static void opentheparkourdoors(AvalonCore plugin){
         ArrayList<String> pistons = new ArrayList<>(plugin.getConfig().getStringList("runner.pistons"));
         ArrayList<Location> pistonlocs = new ArrayList<>();
         for (String piston : pistons) {
@@ -97,7 +97,7 @@ public class Runner implements Listener {
         }
     }
 
-    public static void closetherunnerdoors(AvalonCore plugin){
+    public static void closetheparkourdoors(AvalonCore plugin){
         ArrayList<String> pistons = new ArrayList<>(plugin.getConfig().getStringList("runner.pistons"));
         ArrayList<Location> pistonlocs = new ArrayList<>();
 
@@ -114,8 +114,5 @@ public class Runner implements Listener {
             gettedpiston.setExtended(true);
         }
     }
-
-
-
 
 }

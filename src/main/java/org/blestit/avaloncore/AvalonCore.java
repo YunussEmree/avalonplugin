@@ -16,6 +16,8 @@ import com.sk89q.worldguard.protection.regions.RegionContainer;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
+import org.blestit.avaloncore.AutoEvent.Events.Parkour;
+import org.blestit.avaloncore.AutoEvent.Events.Runner;
 import org.blestit.avaloncore.Dragon.spawn;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
@@ -67,10 +69,16 @@ public final class AvalonCore extends JavaPlugin {
 
         System.out.println(ChatColor.GREEN + "[AVALON] Eklenti Aktif!");
 
+        getCommand("givesaklambactool").setExecutor(new CommandHandler(this));
+        getCommand("givegrapplinghook").setExecutor(new CommandHandler(this));
+        getCommand("ejderfix").setExecutor(new CommandHandler(this));
+        getCommand("kapikapa").setExecutor(new CommandHandler(this));
+        getCommand("kapiac").setExecutor(new CommandHandler(this));
+        getCommand("eventstart").setExecutor(new CommandHandler(this));
 
-        getCommand("givesaklambactool").setExecutor(new CommandHandler());
-        getCommand("givegrapplinghook").setExecutor(new CommandHandler());
-        getCommand("ejderfix").setExecutor(new CommandHandler());
+
+
+
 
         this.saveDefaultConfig();
 
@@ -85,6 +93,8 @@ public final class AvalonCore extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         killthedragon();
+        Runner.closetherunnerdoors(this);
+        Parkour.closetheparkourdoors(this);
     }
     public void registerAll() {
         PluginManager pm = this.getServer().getPluginManager();
