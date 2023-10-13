@@ -116,17 +116,6 @@ public class Runner implements Listener {
     }
 
 
-    /*
-    	@EventHandler
-	public void maybeJump(PlayerInteractEvent event) {
-		if (event.isCancelled()) return;
-		if (event.getAction() != Action.PHYSICAL) return;
-		Player player = event.getPlayer();
-		Block pressurePlate = event.getClickedBlock();
-		if (pressurePlate == null) return;
-		if (pressurePlate.getType() != Material.GOLDEN_PLATE) return;
-		// world condition
-	}
-     */
+
 
 }
