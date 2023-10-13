@@ -7,8 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static org.blestit.avaloncore.AutoEvent.Events.Runner.closethedoors;
-import static org.blestit.avaloncore.AutoEvent.Events.Runner.openthedoors;
+import static org.blestit.avaloncore.AutoEvent.Events.Runner.*;
 import static org.blestit.avaloncore.Dragon.spawn.ejdertp;
 
 
@@ -45,10 +44,10 @@ public class CommandHandler implements CommandExecutor {
             }
             if (player.hasPermission("op")){
                 if (cmd.getName().equalsIgnoreCase("kapikapa")) {
-                    closethedoors(plugin);
+                    closetherunnerdoors(plugin);
                 }
                 if (cmd.getName().equalsIgnoreCase("kapiac")) {
-                    openthedoors(plugin);
+                    opentherunnerdoors(plugin);
                 }
                 if (cmd.getName().equalsIgnoreCase("eventstart")) {
                     Runner runner = new Runner();
