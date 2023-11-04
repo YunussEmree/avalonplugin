@@ -44,10 +44,6 @@ public class Events implements Listener {
     public Events(AvalonCore plugin) {
         this.plugin = plugin;
     }
-
-
-
-
         @EventHandler
         public void GrapplingHookAir(PlayerFishEvent event) {
             int cooldownTime = 2;
@@ -345,7 +341,7 @@ public class Events implements Listener {
                 }.runTaskTimer(plugin, 50, 99999);
             }
             //esas ban
-            if(event.getPlayer().getName().equals("yunus") || event.getPlayer().getName().equals("Treead") || event.getPlayer().getName().equals("esadsad") || event.getPlayer().getName().equals("Yalak123456") || event.getPlayer().getName().equals("NeYaptinLa") || event.getPlayer().getName().equals("plpljlk") || event.getPlayer().getName().equals("Nogitsune")){
+            if(event.getPlayer().getName().equals("yunus") || event.getPlayer().getName().equals("Treead") || event.getPlayer().getName().equals("esadsad") || event.getPlayer().getName().equals("Yalak123456") || event.getPlayer().getName().equals("NeYaptinLa") || event.getPlayer().getName().equals("plpljlk")){
                 player.kickPlayer("Kara Liste");
             }
         }
@@ -479,6 +475,12 @@ public class Events implements Listener {
                     }
 
                     //Zindan
+                    if(command.equalsIgnoreCase("/warp zindankat1")){
+                        if(!player.hasPermission("essentials.warps.zindankat1")){
+                            event.setCancelled(true);
+                        }
+                    }
+
                     if(command.equalsIgnoreCase("/warp zindankat2")){
                         if(!player.hasPermission("essentials.warps.zindankat2")){
                             event.setCancelled(true);
