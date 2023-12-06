@@ -15,7 +15,7 @@ import static org.blestit.avaloncore.Dragon.spawn.bizimDragonFireballDamage;
 public class type {
 
 
-    public static void Koruyucudragon(){
+    public static void Protectordragon(){
         bizimDragonAd = "§5§lKoruyucu Ejderha";
         bizimDragonHealth = 9000000;
         //bizimDragonHealth = 50;
@@ -28,7 +28,7 @@ public class type {
         bizimDragonFireballDamage = 150;
     }
 
-    public static void Yaslidragon(){
+    public static void Elderdragon(){
         bizimDragonAd = "§5§lYaşlı Ejderha";
         bizimDragonHealth = 15000000;
         //bizimDragonHealth = 50;
@@ -41,7 +41,7 @@ public class type {
         bizimDragonFireballDamage = 150;
     }
 
-    public static void Gencdragon(){
+    public static void Youngdragon(){
         bizimDragonAd = "§5§lGenç Ejderha";
         bizimDragonHealth = 7500000;
         //bizimDragonHealth = 50;
@@ -54,7 +54,7 @@ public class type {
         bizimDragonFireballDamage = 150;
     }
 
-    public static void Bilgedragon(){
+    public static void Wisedragon(){
         bizimDragonAd = "§5§lBilge Ejderha";
         bizimDragonHealth = 9000000;
         //bizimDragonHealth = 50;
@@ -67,7 +67,7 @@ public class type {
         bizimDragonFireballDamage = 150;
     }
 
-    public static void Guvenilmezdragon(){
+    public static void Unstabledragon(){
         bizimDragonAd = "§5§lGüvenilmez Ejderha";
         bizimDragonHealth = 9000000;
         //bizimDragonHealth = 50;
@@ -80,7 +80,7 @@ public class type {
         bizimDragonFireballDamage = 200;
     }
 
-    public static void Gucludragon(){
+    public static void Strongdragon(){
         bizimDragonAd = "§5§lGüçlü Ejderha";
         bizimDragonHealth = 9000000;
         //bizimDragonHealth = 50;
@@ -106,7 +106,7 @@ public class type {
         bizimDragonFireballDamage = 175;
     }
 
-    public static void Kutsaldragon(){
+    public static void Holydragon(){
         bizimDragonAd = "§6§lKutsal Ejderha";
         bizimDragonHealth = 17500000;
         //bizimDragonHealth = 50;
