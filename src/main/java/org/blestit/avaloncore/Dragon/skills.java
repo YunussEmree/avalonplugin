@@ -49,33 +49,7 @@ public class skills {
      //       for(loc.getWorld().getBlockAt(kristalloc).getType().isAir() = dragon.setHealth(dragon.getHealth() + bizimDragonHealth/10) ; break;);
         }
 
-        if (Math.random() > 0 && Math.random() < 0.05){
 
-        }
-
-        if (Math.random() > 0 && Math.random() < 0.05){
-
-        }
-
-        if (Math.random() > 0 && Math.random() < 0.05){
-
-        }
-
-        if (Math.random() > 0 && Math.random() < 0.05){
-
-        }
-
-        if (Math.random() > 0 && Math.random() < 0.05){
-
-        }
-
-        if (Math.random() > 0 && Math.random() < 0.05){
-
-        }
-
-        if (Math.random() > 0 && Math.random() < 0.05){
-
-        }
 
     }
 */

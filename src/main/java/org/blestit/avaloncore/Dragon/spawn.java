@@ -22,24 +22,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static org.blestit.avaloncore.Dragon.skills.*;
-import static org.blestit.avaloncore.Dragon.type.Bilgedragon;
-import static org.blestit.avaloncore.Dragon.type.Gencdragon;
-import static org.blestit.avaloncore.Dragon.type.Gucludragon;
-import static org.blestit.avaloncore.Dragon.type.Guvenilmezdragon;
+import static org.blestit.avaloncore.Dragon.type.Wisedragon;
+import static org.blestit.avaloncore.Dragon.type.Youngdragon;
+import static org.blestit.avaloncore.Dragon.type.Strongdragon;
+import static org.blestit.avaloncore.Dragon.type.Unstabledragon;
 import static org.blestit.avaloncore.Dragon.type.Kilgharrahdragon;
-import static org.blestit.avaloncore.Dragon.type.Koruyucudragon;
-import static org.blestit.avaloncore.Dragon.type.Yaslidragon;
-import static org.blestit.avaloncore.Dragon.type.Kutsaldragon;
+import static org.blestit.avaloncore.Dragon.type.Protectordragon;
+import static org.blestit.avaloncore.Dragon.type.Elderdragon;
+import static org.blestit.avaloncore.Dragon.type.Holydragon;
 
 
 
 public class spawn implements Listener {
     public static EnderDragon bizimDragon;
     public static BossBar bizimBossBar;
-    public static EndPortalFrame bizimAltar;
-    public static Block bizimEnderPortal;
     public static ArrayList<Location> bizimAltarlar;
-
     public static String bizimDragonAd;
     public static double bizimDragonAreaDamage;
     public static double bizimDragonFireballDamage;
@@ -64,17 +61,6 @@ public class spawn implements Listener {
     public spawn(AvalonCore plugin) {
         this.plugin = plugin;
     }
-
-
-    ////EJDERİN ARMORUNU AYARLAMA
-    //@EventHandler
-    //public void armor(EntityDamageByEntityEvent event){
-    //    if (event.getEntity() instanceof EnderDragon){
-    //        if (event.getEntity().getCustomName().equals(bizimDragonAd)){
-    //            event.setDamage(event.getDamage() * (100 - bizimDragonArmor) / 100);
-    //        }
-    //    }
-    //}
 
     public static void ejdertp(){
         bizimDragon.teleport(bizimDragonLocation);
@@ -127,28 +113,28 @@ public class spawn implements Listener {
         String sonuc = randomdragon.get((int) Math.round(Math.floor((Math.random()*randomdragon.size()))));
 
         if (sonuc.equals("§5Koruyucu Ejderha")){
-            Koruyucudragon();
+            Protectordragon();
         }
         else if(sonuc.equals("§5Yaşlı Ejderha")) {
-            Yaslidragon();
+            Elderdragon();
         }
         else if(sonuc.equals("§5Genç Ejderha")){
-            Gencdragon();
+            Youngdragon();
         }
         else if(sonuc.equals("§5Bilge Ejderha")){
-            Bilgedragon();
+            Wisedragon();
         }
         else if(sonuc.equals("§5Güvenilmez Ejderha")){
-            Guvenilmezdragon();
+            Unstabledragon();
         }
         else if(sonuc.equals("§5Güçlü Ejderha")){
-            Gucludragon();
+            Strongdragon();
         }
         else if(sonuc.equals("§6Kilgharrah Ejderhası")){
             Kilgharrahdragon();
         }
         else if(sonuc.equals("§6Kutsal Ejderhası")){
-            Kutsaldragon();
+            Holydragon();
         }
         else{
             System.out.println(ChatColor.RED + "[AVALON] Ejderha seçimi ile ilgili bilinmeyen bir hata meydana geldi.");
@@ -1027,8 +1013,6 @@ public class spawn implements Listener {
                                 weightMapi.put(key, weightMapi.get(key) - 800);
                             }
                         }
-
-
 
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.1) {
