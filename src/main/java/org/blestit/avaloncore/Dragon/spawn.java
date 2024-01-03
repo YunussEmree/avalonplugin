@@ -468,12 +468,13 @@ public class spawn implements Listener {
                     String isim = el.getKey();
                     Player player = Bukkit.getPlayer(isim);
 
-                    assert player != null;
-                    if (player.hasPermission("avalon.dragon.extraweight.50")) {
-                        if (!weightMapi.containsKey(isim)) {
-                            weightMapi.put(isim, 50);
-                        } else {
-                            weightMapi.put(isim, weightMapi.get(isim) + 50);
+                    if(player != null && player.isOnline()) {
+                        if (player.hasPermission("avalon.dragon.extraweight.50")) {
+                            if (!weightMapi.containsKey(isim)) {
+                                weightMapi.put(isim, 50);
+                            } else {
+                                weightMapi.put(isim, weightMapi.get(isim) + 50);
+                            }
                         }
                     }
 
@@ -585,6 +586,15 @@ public class spawn implements Listener {
                         if(siralama.get() == 6 || siralama.get() == 7 )  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KORUYUCU "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KORUYUCU "+key+" 3");
 
+
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
+
+
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
                                 Bukkit.dispatchCommand(sender, "broadcast &6" + key + " &badlı oyuncu &5&lKoruyucu Ejderha&b'yı keserek &cEjderha Kılıcı&b kazandı.");
@@ -677,6 +687,12 @@ public class spawn implements Listener {
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:YASLI "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:YASLI "+key+" 3");
 
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
 
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
@@ -771,6 +787,13 @@ public class spawn implements Listener {
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GENC "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GENC "+key+" 3");
 
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
+
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
                                 Bukkit.dispatchCommand(sender, "broadcast &6" + key + " &badlı oyuncu &5&lGenç Ejderha&b'yı keserek &cEjderha Kılıcı&b kazandı.");
@@ -863,6 +886,13 @@ public class spawn implements Listener {
                         if(siralama.get() == 4 || siralama.get() == 5)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:BILGE "+key+" 4");
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:BILGE "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:BILGE "+key+" 3");
+
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
 
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
@@ -958,6 +988,13 @@ public class spawn implements Listener {
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUVENILMEZ "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUVENILMEZ "+key+" 3");
 
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
+
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
                                 Bukkit.dispatchCommand(sender, "broadcast &6" + key + " &badlı oyuncu &5&lGüvenilmez Ejderha&b'yı keserek &cEjderha Kılıcı&b kazandı.");
@@ -1048,6 +1085,13 @@ public class spawn implements Listener {
                         if (siralama.get() == 4 || siralama.get() == 5)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUCLU "+key+" 4");
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUCLU "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUCLU "+key+" 3");
+
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
 
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
@@ -1141,6 +1185,13 @@ public class spawn implements Listener {
                         if(siralama.get() == 4 || siralama.get() == 5)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KUTSAL "+key+" 4");
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KUTSAL "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KILGHARRAH "+key+" 3");
+
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
 
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
@@ -1242,6 +1293,20 @@ public class spawn implements Listener {
                         if(siralama.get() == 4 || siralama.get() == 5)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KILGHARRAH "+key+" 4");
                         if(siralama.get() == 6 || siralama.get() == 7)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KILGHARRAH "+key+" 3");
                         //if(siralama.get() == 9 || siralama.get() == 10 || siralama.get() == 8)  Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KILGHARRAH "+key+" 3");
+
+                        if (weightMapi.get(key) >= 452) {
+                            if ((Math.random() * 100) < 30) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key + " dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 452);
+                            }
+                        }
+
+                        if (weightMapi.get(key) >= 451) {
+                            if ((Math.random() * 100) < gozsayi * 2) {
+                                Bukkit.dispatchCommand(sender, "reforges give " + key +" dragonclaw_1 1");
+                                weightMapi.put(key, weightMapi.get(key) - 451);
+                            }
+                        }
 
                         if (weightMapi.get(key) >= 450) {
                             if ((Math.random() * 100) < gozsayi * 0.25) {
