@@ -381,6 +381,10 @@ public class Events implements Listener {
                     ejdertp();
                 }
             }
+            if(command.equalsIgnoreCase("/warp sualti")){
+                if(player.hasPermission("suadasi.izin"))
+                    event.setCancelled(true);
+            }
             if(command.equalsIgnoreCase("/kit")) {
                 event.setCancelled(true);
                 player.sendMessage(ChatColor.RED + "Şu komudu kullanmayı dene: /kits");
