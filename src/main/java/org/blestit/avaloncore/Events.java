@@ -382,13 +382,15 @@ public class Events implements Listener {
                 }
             }
             if(command.equalsIgnoreCase("/warp sualti")){
-                if(player.hasPermission("suadasi.izin"))
+                if(!player.hasPermission("suadasi.izin"))
                     event.setCancelled(true);
             }
             if(command.equalsIgnoreCase("/kit")) {
                 event.setCancelled(true);
                 player.sendMessage(ChatColor.RED + "Şu komudu kullanmayı dene: /kits");
             }
+
+            if(command.startsWith("/warps ")) event.setCancelled(true);
 
             if(command.contains("warp")){
                 if(!player.isOp()) {
