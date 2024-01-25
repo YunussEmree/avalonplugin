@@ -367,8 +367,8 @@ public class Events implements Listener {
             }
 
             if(command.startsWith("/warps ")) event.setCancelled(true);
-            if(command.startsWith("/warp zindankat")) event.setCancelled(true);
 
+            if(command.startsWith("/warps zindankat")) event.setCancelled(true);
             if(command.contains("warp")){
                 if(!player.isOp()) {
                     if (command.equalsIgnoreCase("/warp ciftlik")) {
