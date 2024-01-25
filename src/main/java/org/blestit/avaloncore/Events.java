@@ -344,30 +344,6 @@ public class Events implements Listener {
             }
         }
 
-        //USBC MANA FIX
-        //@EventHandler
-        //public void preProcessCommand(PlayerCommandPreprocessEvent event) {
-//
-        //    Player player = event.getPlayer();
-        //    String komut = event.getMessage();
-//
-        //    if(komut.equalsIgnoreCase("/sv avalon")){
-        //        event.setCancelled(true);
-        //    }
-//
-        //    Iterator<String> özellikler = plugin.getConfig().getKeys(true).stream().filter(el -> el.matches("manafix\\.swords\\.[^.]+")).iterator();
-        //    for (Iterator<String> it = özellikler; it.hasNext(); ) {
-        //        String key = it.next();
-        //        if (komut.toLowerCase().contains(plugin.getConfig().getString(key + ".commandname").toLowerCase())) {
-        //            if ((player.getInventory().getItemInMainHand().getItemMeta() != null && player.getInventory().getItemInMainHand().getItemMeta().getLore() != null) && player.getInventory().getItemInMainHand().getItemMeta().getLore().contains(plugin.getConfig().getString(key + ".itemlore"))) {
-        //                event.setCancelled(false);
-        //            } else event.setCancelled(true);
-        //            System.out.println(player + "adlı oyuncunun komutu engellendi. Eğer bunun olmaması gerekiyorsa lütfen Avalon eklentisinin configine eşya lore unu ve komudu yazınız.");
-        //            Bukkit.broadcast("§c" + player + "§6adlı oyuncunun §c/" + komut + "§6 komutu engellendi.  §eEğer bunun olmaması gerekiyorsa lütfen Avalon eklentisinin configine eşya lore unu ve komudu yazınız.", "avalon.seewarn");
-        //        }
-        //    }
-        //}
-
 
         //Yetki olmadan warp komutlarını kullanmayı kapatma
         @EventHandler(priority = EventPriority.MONITOR)
@@ -391,6 +367,7 @@ public class Events implements Listener {
             }
 
             if(command.startsWith("/warps ")) event.setCancelled(true);
+
             if(command.startsWith("/warps zindankat")) event.setCancelled(true);
             if(command.contains("warp")){
                 if(!player.isOp()) {
@@ -481,80 +458,44 @@ public class Events implements Listener {
             }
         }
 
-        //2 el ile güç bugunu kaldırma
-        //@EventHandler
-        //public void onbugdamage(EntityDamageByEntityEvent event) {
-        //    if (event.getDamager() instanceof Player){
-        //        Player player = (Player) event.getDamager();
-        //        if(player.getInventory().getItemInMainHand().getType() == Material.WOODEN_SWORD || player.getInventory().getItemInMainHand().getType() == Material.STONE_SWORD || player.getInventory().getItemInMainHand().getType() == Material.GOLDEN_SWORD || player.getInventory().getItemInMainHand().getType() == Material.IRON_SWORD || player.getInventory().getItemInMainHand().getType() == Material.DIAMOND_SWORD || player.getInventory().getItemInMainHand().getType() == Material.BOW || player.getInventory().getItemInMainHand().getType() == Material.GHAST_TEAR || player.getInventory().getItemInMainHand().getType() == Material.EMERALD) {
-        //            if (player.getInventory().getItemInOffHand().getType() == Material.WOODEN_SWORD || player.getInventory().getItemInOffHand().getType() == Material.STONE_SWORD || player.getInventory().getItemInOffHand().getType() == Material.GOLDEN_SWORD || player.getInventory().getItemInOffHand().getType() == Material.IRON_SWORD || player.getInventory().getItemInOffHand().getType() == Material.DIAMOND_SWORD || player.getInventory().getItemInOffHand().getType() == Material.BOW || player.getInventory().getItemInOffHand().getType() == Material.GHAST_TEAR || player.getInventory().getItemInOffHand().getType() == Material.EMERALD) {
-        //                event.setCancelled(true);
-        //            player.sendMessage(ChatColor.RED + "İki elinizi aynı anda kullanamazsınız.");
-        //        }
-        //        }
-//
-        //    }
-        //    if (event.getDamager() instanceof Arrow){
-        //        Projectile proj = (Projectile) event.getDamager();
-        //        Entity player1 = (Entity) proj.getShooter();
-        //        if(player1 instanceof Player){
-        //            Player player = (Player) proj.getShooter();
-//
-//
-//
-        //        assert player != null;
-        //        if(player.getInventory().getItemInMainHand().getType() == Material.WOODEN_SWORD || player.getInventory().getItemInMainHand().getType() == Material.STONE_SWORD || player.getInventory().getItemInMainHand().getType() == Material.GOLDEN_SWORD || player.getInventory().getItemInMainHand().getType() == Material.IRON_SWORD || player.getInventory().getItemInMainHand().getType() == Material.DIAMOND_SWORD || player.getInventory().getItemInMainHand().getType() == Material.BOW || player.getInventory().getItemInMainHand().getType() == Material.GHAST_TEAR || player.getInventory().getItemInMainHand().getType() == Material.EMERALD) {
-        //            if (player.getInventory().getItemInOffHand().getType() == Material.WOODEN_SWORD || player.getInventory().getItemInOffHand().getType() == Material.STONE_SWORD || player.getInventory().getItemInOffHand().getType() == Material.GOLDEN_SWORD || player.getInventory().getItemInOffHand().getType() == Material.IRON_SWORD || player.getInventory().getItemInOffHand().getType() == Material.DIAMOND_SWORD || player.getInventory().getItemInOffHand().getType() == Material.BOW || player.getInventory().getItemInOffHand().getType() == Material.GHAST_TEAR || player.getInventory().getItemInOffHand().getType() == Material.EMERALD) {
-        //                event.setCancelled(true);
-        //                player.sendMessage(ChatColor.RED + "İki elinizi aynı anda kullanamazsınız.");
-        //            }
-        //            }
-        //        }
-        //    }
-        //}
-
-
-        //Oyuncu pvp fix
-        //@EventHandler
-        //public void arena(EntityDamageByEntityEvent event) {
-        //    var entity = event.getEntity();
-        //    if (entity instanceof Player) {
-        //        Player player = (Player) entity;
-        //        String world1 = (event.getEntity().getWorld().getName());
-        //        if(world1.equals("opskymap")){
-        //        World world = Bukkit.getServer().getWorld("opskymap");
-        //        assert world != null;
-        //        RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
-        //        RegionManager regions = container.get(BukkitAdapter.adapt(world));
-        //        assert regions != null;
-        //        ProtectedRegion region = regions.getRegion("arena");
-        //        assert region != null;
-        //        if (region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))) {
-        //            event.setDamage(event.getDamage() / 2000);
-        //        }
-        //        }
-        //    }
-        //}
 
         @EventHandler
-        public void zindanfix1(PlayerFishEvent event){
+        public void zindanfix1(PlayerFishEvent event) {
             Player player = event.getPlayer();
-            String worldad = event.getPlayer().getWorld().getName();
-            if(worldad.equals("zindan") && (!player.hasPermission("giris.zindan"))){
-                ConsoleCommandSender cs = Bukkit.getConsoleSender();
-                Bukkit.dispatchCommand(cs, "spawn " + player.getName());
+            String world1 = (player.getWorld().getName());
+            if (world1.equals("AvalonMap")) {
+                World world = Bukkit.getServer().getWorld("AvalonMap");
+                assert world != null;
+                RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+                RegionManager regions = container.get(BukkitAdapter.adapt(world));
+                assert regions != null;
+                ProtectedRegion region = regions.getRegion("zindanyeni");
+                String worldad = event.getPlayer().getWorld().getName();
+                if (worldad.equals("AvalonMap") && (region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())) && (!player.hasPermission("giris.zindan")))) {
+                    ConsoleCommandSender cs = Bukkit.getConsoleSender();
+                    Bukkit.dispatchCommand(cs, "spawn " + player.getName());
+                }
             }
         }
 
 
         @EventHandler
-        public void zindanfix2(EntityDamageByEntityEvent event){
-            if(event.getDamager() instanceof Player){
+        public void zindanfix2(EntityDamageByEntityEvent event) {
+            if (event.getDamager() instanceof Player) {
                 Player player = (Player) event.getDamager();
-                String worldad = player.getWorld().getName();
-                if(worldad.equals("zindan") && (!player.hasPermission("giris.zindan"))){
-                    ConsoleCommandSender cs = Bukkit.getConsoleSender();
-                    Bukkit.dispatchCommand(cs, "spawn " + player.getName());
+                String world1 = (player.getWorld().getName());
+                if (world1.equals("AvalonMap")) {
+                    World world = Bukkit.getServer().getWorld("AvalonMap");
+                    assert world != null;
+                    RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+                    RegionManager regions = container.get(BukkitAdapter.adapt(world));
+                    assert regions != null;
+                    ProtectedRegion region = regions.getRegion("zindanyeni");
+                    String worldad = player.getWorld().getName();
+                    if (worldad.equals("AvalonMap") && (region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ())) && (!player.hasPermission("giris.zindan")))) {
+                        ConsoleCommandSender cs = Bukkit.getConsoleSender();
+                        Bukkit.dispatchCommand(cs, "spawn " + player.getName());
+                    }
                 }
             }
         }
@@ -655,8 +596,8 @@ public class Events implements Listener {
                     Player vurulanoyuncu = (Player) event.getEntity();
                     Player vuranoyuncu = (Player) event.getDamager();
                     if(vurulanoyuncu.getHealth() - event.getFinalDamage() <= 0){
-                        Bukkit.dispatchCommand(cs, "bq point " + vuranoyuncu.getName() + " add default.arenakill 1");
-                        Bukkit.dispatchCommand(cs, "bq point " + vurulanoyuncu.getName() + " add default.arenadeath 1");
+                        Bukkit.dispatchCommand(cs, "bq point " + vuranoyuncu.getName() + " add Gorevler.arenakill 1");
+                        Bukkit.dispatchCommand(cs, "bq point " + vurulanoyuncu.getName() + " add Gorevler.arenadeath 1");
                     }
                 }
             }
@@ -668,8 +609,8 @@ public class Events implements Listener {
                     if(projshooter instanceof Player){
                         Player vuranoyuncuokcu = (Player) proj.getShooter();
                         if(vurulanoyuncu.getHealth() - event.getFinalDamage() <= 0){
-                            Bukkit.dispatchCommand(cs, "bq point " + vuranoyuncuokcu.getName() + " add default.arenakill 1");
-                            Bukkit.dispatchCommand(cs, "bq point " + vurulanoyuncu.getName() + " add default.arenadeath 1");
+                            Bukkit.dispatchCommand(cs, "bq point " + vuranoyuncuokcu.getName() + " add Gorevler.arenakill 1");
+                            Bukkit.dispatchCommand(cs, "bq point " + vurulanoyuncu.getName() + " add Gorevler.arenadeath 1");
                         }
                     }
                 }

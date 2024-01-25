@@ -148,7 +148,7 @@ public final class AvalonCore extends JavaPlugin {
 
         @Override
         public String getVersion() {
-            return "2.0.5";
+            return "2.1.6";
         }
 
         @Override
