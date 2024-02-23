@@ -866,8 +866,11 @@ public class Events implements Listener {
                 Material material = item.getType();
                 double xpMultiplier = 1.0;
 
-                if (item.getEnchantments().size() > 0) {
+                if (item.getEnchantments().size() > 0 && !material.equals(Material.HEART_OF_THE_SEA)) {
                     xpMultiplier = 160.0;
+                }
+                if (item.getEnchantments().size() > 0 && material.equals(Material.HEART_OF_THE_SEA)) {
+                    xpMultiplier = 9.0;
                 }
 
 
