@@ -897,12 +897,12 @@ public class Events implements Listener {
                     break;
                 }
                 double zindanXP = getSkillXP("zindan", material) * amount * xpMultiplier;
-                if (fishingXP > 0) {
+                if (zindanXP > 0) {
                     EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("zindan"), zindanXP);
                     break;
                 }
                 double alchemyXP = getSkillXP("alchemy", material) * amount * xpMultiplier;
-                if (fishingXP > 0) {
+                if (alchemyXP > 0) {
                     EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("alchemy"), alchemyXP);
                     break;
                 }
