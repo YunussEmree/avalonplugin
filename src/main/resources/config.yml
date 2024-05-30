@@ -26,94 +26,79 @@ dragon:
     z: 5
 
 dragons:
-  1:
+  koruyucu:
     Display_name: "§5§lKoruyucu Ejderha"
     Health: 9000000
     Damage: 100.0
     Speed: 1.0
     Armor: 0
-    ThunderDamage: 200
-    ThunderCooldown: 1200
-    AreaDamage: 100
-    FireballDamage: 150
+    SkillDamage: 200
+    SkillCooldown: 1200
     Chance: 16
-  2:
+  yasli:
     Display_name: "§5§lYaşlı Ejderha"
     Health: 15000000
     Damage: 100.0
     Speed: 1.0
     Armor: 0
-    ThunderDamage: 200
-    ThunderCooldown: 1200
-    AreaDamage: 100
-    FireballDamage: 150
+    SkillDamage: 200
+    SkillCooldown: 1200
     Chance: 16
-  3:
+  genc:
     Display_name: "§5§lGenç Ejderha"
     Health: 7500000
     Damage: 100.0
     Speed: 1.5
     Armor: 0
-    ThunderDamage: 200
-    ThunderCooldown: 1200
-    AreaDamage: 100
-    FireballDamage: 150
+    SkillDamage: 200
+    SkillCooldown: 1200
     Chance: 16
-  4:
+  bilge:
     Display_name: "§5§lBilge Ejderha"
     Health: 9000000
     Damage: 100.0
     Speed: 1.5
     Armor: 0
-    ThunderDamage: 200
-    ThunderCooldown: 900
-    AreaDamage: 100
-    FireballDamage: 150
+    SkillDamage: 200
+    SkillCooldown: 900
     Chance: 16
-  5:
+  guvenilmez:
     Display_name: "§5§lGüvenilmez Ejderha"
     Health: 9000000
     Damage: 100.0
     Speed: 1.5
     Armor: 0
-    ThunderDamage: 350
-    ThunderCooldown: 1200
-    AreaDamage: 125
-    FireballDamage: 200
+    SkillDamage: 350
+    SkillCooldown: 1200
     Chance: 16
-    6:
-      Display_name: "§5§lGüçlü Ejderha"
-      Health: 9000000
-      Damage: 150.0
-      Speed: 1.5
-      Armor: 0
-      ThunderDamage: 200
-      ThunderCooldown: 1200
-      AreaDamage: 100
-      FireballDamage: 150
-      Chance: 16
-    7:
-      Display_name: "§6§lKilgharrah Ejderhası"
-      Health: 12000000
-      Damage: 200.0
-      Speed: 1.2
-      Armor: 0
-      ThunderDamage: 350
-      ThunderCooldown: 1000
-      AreaDamage: 150
-      FireballDamage: 175
-      Chance: 2
-    8:
-      Display_name: "§6§lKutsal Ejderha"
-      Health: 17500000
-      Damage: 150.0
-      Speed: 1.0
-      Armor: 0
-      ThunderDamage: 200
-      ThunderCooldown: 700
-      AreaDamage: 100
-      FireballDamage: 125
-      Chance: 2
+  guclu:
+    Display_name: "§5§lGüçlü Ejderha"
+    Health: 9000000
+    Damage: 150.0
+    Speed: 1.5
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 1200
+    Chance: 16
+  kilgharrah:
+    Display_name: "§6§lKilgharrah Ejderhası"
+    Health: 12000000
+    Damage: 200.0
+    Speed: 1.2
+    Armor: 0
+    SkillDamage: 350
+    SkillCooldown: 1000
+    Chance: 2
+  kutsal:
+    Display_name: "§6§lKutsal Ejderha"
+    Health: 17500000
+    Damage: 150.0
+    Speed: 1.0
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 700
+    Chance: 2
+
 
 
 

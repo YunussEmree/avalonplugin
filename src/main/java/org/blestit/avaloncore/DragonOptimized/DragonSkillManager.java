@@ -1,4 +1,4 @@
-package org.blestit.avaloncore.Dragon;
+package org.blestit.avaloncore.DragonOptimized;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -15,11 +15,10 @@ import org.bukkit.util.Vector;
 import java.util.Random;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.blestit.avaloncore.Dragon.spawn.bizimDragonThunderAttack;
 
-public class skills implements Listener {
+public class DragonSkillManager implements Listener {
 
     public static void thunder(EnderDragon dragon) {
         Location dragonLocation = dragon.getLocation();

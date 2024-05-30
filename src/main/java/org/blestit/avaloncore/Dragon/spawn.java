@@ -21,7 +21,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import static org.blestit.avaloncore.Dragon.skills.*;
+import static org.blestit.avaloncore.DragonOptimized.DragonSkillManager.*;
 import static org.blestit.avaloncore.Dragon.type.Wisedragon;
 import static org.blestit.avaloncore.Dragon.type.Youngdragon;
 import static org.blestit.avaloncore.Dragon.type.Strongdragon;
@@ -95,48 +95,6 @@ public class spawn implements Listener {
         EnderDragon dragon = location.getWorld().spawn(location,EnderDragon.class);
         bizimDragon = dragon;
 
-        //EJDER ÇEŞİDİNİ BELİRLEME
-        ArrayList<String> randomdragon = new ArrayList<>();
-        for(int i = 0; i<8; i++){
-            randomdragon.add("§5Koruyucu Ejderha");
-            randomdragon.add("§5Yaşlı Ejderha");
-            randomdragon.add("§5Genç Ejderha");
-            randomdragon.add("§5Bilge Ejderha");
-            randomdragon.add("§5Güvenilmez Ejderha");
-            randomdragon.add("§5Güçlü Ejderha");
-        }
-        randomdragon.add("§6Kilgharrah Ejderhası");
-        randomdragon.add("§6Kutsal Ejderhası");
-
-        String sonuc = randomdragon.get((int) Math.round(Math.floor((Math.random()*randomdragon.size()))));
-
-        if (sonuc.equals("§5Koruyucu Ejderha")){
-            Protectordragon();
-        }
-        else if(sonuc.equals("§5Yaşlı Ejderha")) {
-            Elderdragon();
-        }
-        else if(sonuc.equals("§5Genç Ejderha")){
-            Youngdragon();
-        }
-        else if(sonuc.equals("§5Bilge Ejderha")){
-            Wisedragon();
-        }
-        else if(sonuc.equals("§5Güvenilmez Ejderha")){
-            Unstabledragon();
-        }
-        else if(sonuc.equals("§5Güçlü Ejderha")){
-            Strongdragon();
-        }
-        else if(sonuc.equals("§6Kilgharrah Ejderhası")){
-            Kilgharrahdragon();
-        }
-        else if(sonuc.equals("§6Kutsal Ejderhası")){
-            Holydragon();
-        }
-        else{
-            System.out.println(ChatColor.RED + "[AVALON] Ejderha seçimi ile ilgili bilinmeyen bir hata meydana geldi.");
-        }
 
         //EJDER ÖZELLİKLERİ BELİRLEME
         dragon.setMaxHealth(bizimDragonHealth);
