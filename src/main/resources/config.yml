@@ -104,15 +104,15 @@ dragons:
       FireballDamage: 175
       Chance: 2
     8:
-      Display_name: "§6§lKilgharrah Ejderhası"
-      Health: 12000000
-      Damage: 200.0
-      Speed: 1.2
+      Display_name: "§6§lKutsal Ejderha"
+      Health: 17500000
+      Damage: 150.0
+      Speed: 1.0
       Armor: 0
-      ThunderDamage: 350
-      ThunderCooldown: 1000
-      AreaDamage: 150
-      FireballDamage: 175
+      ThunderDamage: 200
+      ThunderCooldown: 700
+      AreaDamage: 100
+      FireballDamage: 125
       Chance: 2
 
 

@@ -10,11 +10,13 @@ import com.comphenix.protocol.events.PacketEvent;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.math.BlockVector3;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.blestit.avaloncore.AutoEvent.Events.Parkour;
 import org.blestit.avaloncore.AutoEvent.Events.Runner;
 import org.blestit.avaloncore.Dragon.spawn;
+import org.blestit.avaloncore.Events.*;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
@@ -40,10 +42,7 @@ public final class AvalonCore extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        Bukkit.getPluginManager().registerEvents(new Events(this),this);
-        Bukkit.getPluginManager().registerEvents(new spawn(this),this);
-
+        registerAllListeners();
         ItemManager.init();
 
 
@@ -73,11 +72,7 @@ public final class AvalonCore extends JavaPlugin {
         getCommand("eventstart").setExecutor(new CommandHandler(this));
 
 
-
-
-
         this.saveDefaultConfig();
-
         this.setupPermissions();
         this.setupEconomy();
         this.registerAll();
@@ -188,5 +183,32 @@ public final class AvalonCore extends JavaPlugin {
 
             return null;
         }
+    }
+
+    private void registerAllListeners(){
+
+        Bukkit.getPluginManager().registerEvents(new AFKDetect(this),this);
+        Bukkit.getPluginManager().registerEvents(new BlazeFireballBlock(this),this);
+        Bukkit.getPluginManager().registerEvents(new ChatPing(this),this);
+        Bukkit.getPluginManager().registerEvents(new CoralDupeBlock(),this);
+        Bukkit.getPluginManager().registerEvents(new CubeSplitBlock(),this);
+        Bukkit.getPluginManager().registerEvents(new DisableJoinMessage(),this);
+        Bukkit.getPluginManager().registerEvents(new DisableQuitMessage(),this);
+        Bukkit.getPluginManager().registerEvents(new DungeonProtection(),this);
+        Bukkit.getPluginManager().registerEvents(new EnvironmentDamageFix(),this);
+        Bukkit.getPluginManager().registerEvents(new GrapplingHook(this),this);
+        Bukkit.getPluginManager().registerEvents(new HideandSeek(this),this);
+        Bukkit.getPluginManager().registerEvents(new KDAStat(),this);
+        Bukkit.getPluginManager().registerEvents(new KukkiEffect(this),this);
+        Bukkit.getPluginManager().registerEvents(new MenuWithF(),this);
+        Bukkit.getPluginManager().registerEvents(new MMEggSettings(this),this);
+        Bukkit.getPluginManager().registerEvents(new NerfPhantom(this),this);
+        Bukkit.getPluginManager().registerEvents(new SelfHitBlock(),this);
+        Bukkit.getPluginManager().registerEvents(new SkillsXPMultiplier(this),this);
+        Bukkit.getPluginManager().registerEvents(new VillagerTradeBlock(),this);
+        Bukkit.getPluginManager().registerEvents(new WarpCommandsBlock(),this);
+
+        //dragon
+        Bukkit.getPluginManager().registerEvents(new spawn(this),this);
     }
 }
