@@ -47,7 +47,6 @@ public class DragonTypeSelection {
             }
         }
 
-        // Eğer hiçbir ejderha türü seçilmezse (bu olmamalı), null döndür
         return null;
     }
 

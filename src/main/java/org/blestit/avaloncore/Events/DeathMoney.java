@@ -1,5 +1,6 @@
-package org.blestit.avaloncore;
+package org.blestit.avaloncore.Events;
 
+import org.blestit.avaloncore.AvalonCore;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;

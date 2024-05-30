@@ -1,14 +1,13 @@
 package org.blestit.avaloncore;
 
 import org.blestit.avaloncore.AutoEvent.Events.Runner;
-import org.blestit.avaloncore.ItemManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import static org.blestit.avaloncore.AutoEvent.Events.Runner.*;
-import static org.blestit.avaloncore.Dragon.spawn.ejdertp;
+import static org.blestit.avaloncore.DragonOptimized.Dragon.dragon;
 
 
 public class CommandHandler implements CommandExecutor {
@@ -39,7 +38,7 @@ public class CommandHandler implements CommandExecutor {
 
             if (player.hasPermission("avalon.ejdertp")){
                 if (cmd.getName().equalsIgnoreCase("ejderfix")) {
-                    ejdertp();
+                    dragon.teleport(player.getLocation());
                 }
             }
             if (player.hasPermission("op")){

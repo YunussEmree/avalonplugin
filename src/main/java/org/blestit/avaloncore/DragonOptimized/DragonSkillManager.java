@@ -16,8 +16,6 @@ import java.util.Random;
 
 import java.util.List;
 
-import static org.blestit.avaloncore.Dragon.spawn.bizimDragonThunderAttack;
-
 public class DragonSkillManager implements Listener {
 
     public static void thunder(EnderDragon dragon) {

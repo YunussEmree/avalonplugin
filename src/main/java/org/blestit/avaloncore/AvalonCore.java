@@ -7,28 +7,27 @@ import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
-import com.sk89q.worldedit.bukkit.BukkitAdapter;
-import com.sk89q.worldedit.math.BlockVector3;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.blestit.avaloncore.AutoEvent.Events.Parkour;
 import org.blestit.avaloncore.AutoEvent.Events.Runner;
-import org.blestit.avaloncore.Dragon.spawn;
+import org.blestit.avaloncore.DragonOptimized.DragonAltar;
+import org.blestit.avaloncore.DragonOptimized.DragonManager;
+import org.blestit.avaloncore.DragonOptimized.DragonReward;
+import org.blestit.avaloncore.DragonOptimized.DragonSkillManager;
 import org.blestit.avaloncore.Events.*;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static org.blestit.avaloncore.Dragon.spawn.*;
-
 import static me.clip.placeholderapi.PlaceholderAPI.setPlaceholders;
-import static org.blestit.avaloncore.Dragon.spawn.killthedragon;
+import static org.blestit.avaloncore.DragonOptimized.Dragon.Health;
+import static org.blestit.avaloncore.DragonOptimized.DragonManager.killthedragon;
+import static org.blestit.avaloncore.DragonOptimized.DragonReward.dragonhp;
+import static org.blestit.avaloncore.DragonOptimized.DragonReward.hasarMapi;
 
 public final class AvalonCore extends JavaPlugin {
 
@@ -175,10 +174,10 @@ public final class AvalonCore extends JavaPlugin {
                 return String.valueOf(Math.round(hasarMapi.get(p.getName())));
             }
             if (identifier.equals("dragoninstanthealth")) {
-                return String.valueOf(Math.round(dragonAnlikCan));
+                return String.valueOf(Math.round(dragonhp));
             }
             if (identifier.equals("dragonmaxhealth")) {
-                return String.valueOf(bizimDragonHealth);
+                return String.valueOf(Health);
             }
 
             return null;
@@ -209,6 +208,9 @@ public final class AvalonCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new WarpCommandsBlock(),this);
 
         //dragon
-        Bukkit.getPluginManager().registerEvents(new spawn(this),this);
+        Bukkit.getPluginManager().registerEvents(new DragonAltar(this),this);
+        Bukkit.getPluginManager().registerEvents(new DragonManager(),this);
+        Bukkit.getPluginManager().registerEvents(new DragonSkillManager(),this);
+        Bukkit.getPluginManager().registerEvents(new DragonReward(this),this);
     }
 }

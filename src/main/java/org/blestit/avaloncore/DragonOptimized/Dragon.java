@@ -4,17 +4,17 @@ import org.bukkit.Location;
 import org.bukkit.entity.EnderDragon;
 
 public class Dragon {
-    String Health;
-    String Damage;
-    String Speed;
-    String Armor;
-    String SkillDamage;
-    String SkillCooldown;
+    public static int Health = 0;
+    static int Damage = 0;
+    static int Speed = 0;
+    static int Armor = 0;
+    static int SkillDamage = 0;
+    static int SkillCooldown = 0;
 
-    static EnderDragon dragon;
+    public static EnderDragon dragon;
 
 
-    public Dragon(String Health, String Damage, String Speed, String Armor, String SkillDamage, String SkillCooldown, Location location) {
+    public Dragon(int Health, int Damage, int Speed, int Armor, int SkillDamage, int SkillCooldown, Location location) {
         this.Health = Health;
         this.Damage = Damage;
         this.Speed = Speed;
@@ -23,8 +23,8 @@ public class Dragon {
         this.SkillCooldown = SkillCooldown;
 
         dragon = location.getWorld().spawn(location,EnderDragon.class);
-
-
     }
+
+
 
 }
