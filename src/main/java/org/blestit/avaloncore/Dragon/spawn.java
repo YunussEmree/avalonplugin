@@ -38,8 +38,6 @@ public class spawn implements Listener {
     public static BossBar bizimBossBar;
     public static ArrayList<Location> bizimAltarlar;
     public static String bizimDragonAd;
-    public static double bizimDragonAreaDamage;
-    public static double bizimDragonFireballDamage;
     public static int bizimDragonHealth;
     public static double bizimDragonDamage;
     public static double bizimDragonSpeed;
@@ -290,40 +288,6 @@ public class spawn implements Listener {
             }
         }
     }
-
-
-
-
-
-    //EJDERİN PORTALDA KALMASINI ENGELLEME (YERDE ASILI KALMASINI ENGELLEME)
-    @EventHandler
-    public void dragonbreak(EnderDragonChangePhaseEvent event){
-        if(event.getNewPhase().equals(EnderDragon.Phase.FLY_TO_PORTAL)){
-            event.setCancelled(true);
-        }
-        if(event.getNewPhase().equals(EnderDragon.Phase.LAND_ON_PORTAL)){
-            event.setCancelled(true);
-        }
-    }
-
-
-
-
-    @EventHandler
-    public void dragonfireball(EntityDamageByEntityEvent event){
-        if (event.getDamager() instanceof AreaEffectCloud){
-            event.setDamage(bizimDragonAreaDamage);
-        }
-        if (event.getDamager() instanceof LargeFireball){
-            Projectile proj = (Projectile) event.getDamager();
-            Entity shooter = (Entity) proj.getShooter();
-
-            if(shooter.equals(bizimDragon)){
-                event.setDamage(bizimDragonFireballDamage);
-            }
-        }
-    }
-
 
 
 

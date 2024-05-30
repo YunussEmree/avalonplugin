@@ -25,6 +25,97 @@ dragon:
     y: 85
     z: 5
 
+dragons:
+  1:
+    Display_name: "§5§lKoruyucu Ejderha"
+    Health: 9000000
+    Damage: 100.0
+    Speed: 1.0
+    Armor: 0
+    ThunderDamage: 200
+    ThunderCooldown: 1200
+    AreaDamage: 100
+    FireballDamage: 150
+    Chance: 16
+  2:
+    Display_name: "§5§lYaşlı Ejderha"
+    Health: 15000000
+    Damage: 100.0
+    Speed: 1.0
+    Armor: 0
+    ThunderDamage: 200
+    ThunderCooldown: 1200
+    AreaDamage: 100
+    FireballDamage: 150
+    Chance: 16
+  3:
+    Display_name: "§5§lGenç Ejderha"
+    Health: 7500000
+    Damage: 100.0
+    Speed: 1.5
+    Armor: 0
+    ThunderDamage: 200
+    ThunderCooldown: 1200
+    AreaDamage: 100
+    FireballDamage: 150
+    Chance: 16
+  4:
+    Display_name: "§5§lBilge Ejderha"
+    Health: 9000000
+    Damage: 100.0
+    Speed: 1.5
+    Armor: 0
+    ThunderDamage: 200
+    ThunderCooldown: 900
+    AreaDamage: 100
+    FireballDamage: 150
+    Chance: 16
+  5:
+    Display_name: "§5§lGüvenilmez Ejderha"
+    Health: 9000000
+    Damage: 100.0
+    Speed: 1.5
+    Armor: 0
+    ThunderDamage: 350
+    ThunderCooldown: 1200
+    AreaDamage: 125
+    FireballDamage: 200
+    Chance: 16
+    6:
+      Display_name: "§5§lGüçlü Ejderha"
+      Health: 9000000
+      Damage: 150.0
+      Speed: 1.5
+      Armor: 0
+      ThunderDamage: 200
+      ThunderCooldown: 1200
+      AreaDamage: 100
+      FireballDamage: 150
+      Chance: 16
+    7:
+      Display_name: "§6§lKilgharrah Ejderhası"
+      Health: 12000000
+      Damage: 200.0
+      Speed: 1.2
+      Armor: 0
+      ThunderDamage: 350
+      ThunderCooldown: 1000
+      AreaDamage: 150
+      FireballDamage: 175
+      Chance: 2
+    8:
+      Display_name: "§6§lKilgharrah Ejderhası"
+      Health: 12000000
+      Damage: 200.0
+      Speed: 1.2
+      Armor: 0
+      ThunderDamage: 350
+      ThunderCooldown: 1000
+      AreaDamage: 150
+      FireballDamage: 175
+      Chance: 2
+
+
 
 PlayerPing:
   Sound: "ENTITY_ARROW_HIT_PLAYER"
