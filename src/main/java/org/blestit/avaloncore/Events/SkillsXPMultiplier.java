@@ -1,15 +1,40 @@
 package org.blestit.avaloncore.Events;
 
+
+import io.github.WeloxiaDev.UltraMinions.api.UltraMinionsAPI;
+import io.github.WeloxiaDev.UltraMinions.api.events.MinionCollectEvent;
+import io.github.WeloxiaDev.UltraMinions.api.events.MinionLoadEvent;
+import io.github.WeloxiaDev.UltraMinions.api.events.MinionUnloadEvent;
+import io.github.WeloxiaDev.UltraMinions.database.PlayerData;
+import io.github.WeloxiaDev.UltraMinions.database.PlayerMinion;
+import io.github.WeloxiaDev.UltraMinions.database.minion.PlayerMinionUpgrade;
+import io.github.WeloxiaDev.UltraMinions.food.Food;
+import io.github.WeloxiaDev.UltraMinions.managers.MinionManager;
+import io.github.WeloxiaDev.UltraMinions.minions.Minion;
+import io.github.WeloxiaDev.UltraMinions.minions.levels.MinionLevel;
+import io.github.WeloxiaDev.UltraMinions.Main;
+import io.github.WeloxiaDev.UltraMinions.tiers.Tier;
+import io.github.WeloxiaDev.UltraMinions.upgrades.UpgradeFuel;
+import io.github.WeloxiaDev.UltraMinions.utils.MathUtils;
+import io.github.WeloxiaDev.UltraMinions.utils.NBTEditor;
+import io.github.WeloxiaDev.UltraMinions.utils.Utils;
+import com.willfp.ecoskills.skills.Skills;
+import com.willfp.ecoskills.api.EcoSkillsAPI;
+
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class SkillsXPMultiplier {
+
+
+public class SkillsXPMultiplier implements Listener {
 
     Plugin plugin;
 
@@ -17,6 +42,7 @@ public class SkillsXPMultiplier {
         this.plugin = plugin;
     }
 
+    @EventHandler
     public void onMinionCollect(MinionCollectEvent event) {
         Player p = event.getPlayer();
         if (!event.getItems().isEmpty()) {
