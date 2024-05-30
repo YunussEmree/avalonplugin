@@ -4,7 +4,6 @@ import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.type.EndPortalFrame;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -103,19 +102,22 @@ public class DragonAltar implements Listener {
                                     if (i == 0) {
                                         DragonTypeSelection dragonTypeSelection = new DragonTypeSelection(plugin);
                                         String type = dragonTypeSelection.selectDragonType();
-                                        int hp = plugin.getConfig().getInt("dragons." + type + ".health");
-                                        int damage = plugin.getConfig().getInt("dragons." + type + ".damage");
-                                        int speed = plugin.getConfig().getInt("dragons." + type + ".speed");
-                                        int armor = plugin.getConfig().getInt("dragons." + type + ".armor");
-                                        int skillDamage = plugin.getConfig().getInt("dragons." + type + ".skillDamage");
-                                        int skillCooldown = plugin.getConfig().getInt("dragons." + type + ".skillCooldown");
+
+                                        int hp = plugin.getConfig().getInt("dragons." + type + ".Health");
+                                        int damage = plugin.getConfig().getInt("dragons." + type + ".Damage");
+                                        int speed = plugin.getConfig().getInt("dragons." + type + ".Speed");
+                                        int armor = plugin.getConfig().getInt("dragons." + type + ".Armor");
+                                        int skillDamage = plugin.getConfig().getInt("dragons." + type + ".SkillDamage");
+                                        int skillCooldown = plugin.getConfig().getInt("dragons." + type + ".SkillCooldown");
+                                        String displayname = plugin.getConfig().getString("dragons." + type + ".Display_name");
                                         Location loc = new Location(world, dragonlocx, dragonlocy, dragonlocz);
 
-                                        dragon = (EnderDragon) new Dragon(hp,damage, speed, armor, skillDamage, skillCooldown, loc);
+                                        System.out.println("Ejderha ismi: " + displayname);
+
+                                        dragon = new Dragon(hp,damage, speed, armor, skillDamage, skillCooldown, loc, displayname);
 
 
-
-                                        Bukkit.broadcastMessage("§dEjderha türü: " + dragon.getCustomName());
+                                        Bukkit.broadcastMessage("§dEjderha türü: " + displayname);
                                     } else if (i != -1) {
                                         Bukkit.broadcastMessage("§5Ejderha Doğuyor... §d" + i);
                                         world.playSound(event.getClickedBlock().getLocation(), Sound.ENTITY_PARROT_IMITATE_ENDER_DRAGON, 50, 50);

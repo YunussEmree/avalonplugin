@@ -1,5 +1,5 @@
 name: AvalonCore
-version: '2.1.5'
+version: '2.1.7'
 main: org.blestit.avaloncore.AvalonCore
 api-version: '1.19'
 prefix: AVALONCORE

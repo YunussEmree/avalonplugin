@@ -81,10 +81,12 @@ public final class AvalonCore extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
         killthedragon();
         Runner.closetherunnerdoors(this);
         Parkour.closetheparkourdoors(this);
+
+        ConsoleCommandSender cs = Bukkit.getConsoleSender();
+        Bukkit.dispatchCommand(cs, "minecraft:kill @e[type=minecraft:ender_dragon]");
     }
     public void registerAll() {
         PluginManager pm = this.getServer().getPluginManager();

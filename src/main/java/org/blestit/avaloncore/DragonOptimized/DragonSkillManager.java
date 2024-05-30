@@ -16,6 +16,8 @@ import java.util.Random;
 
 import java.util.List;
 
+import static org.blestit.avaloncore.DragonOptimized.Dragon.SkillDamage;
+
 public class DragonSkillManager implements Listener {
 
     public static void thunder(EnderDragon dragon) {
@@ -26,7 +28,7 @@ public class DragonSkillManager implements Listener {
         for(Entity entity : entities){
             if(entity instanceof Player){
                 Player player = (Player) entity;
-                player.damage(bizimDragonThunderAttack);
+                player.damage(SkillDamage);
                 world.strikeLightning(player.getLocation());
             }
         }
@@ -39,7 +41,7 @@ public class DragonSkillManager implements Listener {
         for (Entity entity : entities) {
             if (entity instanceof Player) {
                 Player player = (Player) entity;
-                player.damage(bizimDragonThunderAttack);
+                player.damage(SkillDamage);
                 world.strikeLightning(player.getLocation());
 
                 // Set the weather to storm at the player's location
@@ -265,6 +267,10 @@ public class DragonSkillManager implements Listener {
             player.setVelocity(knockbackDirection.multiply(10));
         }
     }
+
+
+
+
 }
 
 

@@ -29,23 +29,27 @@ public class DragonTypeSelection {
         // fill the map with dragon chances and types
         Map<String, Double> dragonChances = new HashMap<>();
         for (String dragonType : dragonTypes) {
-            double chance = config.getDouble("dragons." + dragonType + ".chance");
+            double chance = config.getDouble("dragons." + dragonType + ".Chance");
             dragonChances.put(dragonType, chance);
         }
+        System.out.println("Dragon chances: " + dragonChances);
 
         // Calculating total weight
         double totalWeight = 0.0;
         for (double chance : dragonChances.values()) {
             totalWeight += chance;
         }
+        System.out.println("Total weight: " + totalWeight);
 
         double random = Math.random() * totalWeight;
         for (Map.Entry<String, Double> entry : dragonChances.entrySet()) {
             random -= entry.getValue();
             if (random <= 0.0) {
+                System.out.println("Selected dragon type: " + entry.getKey());
                 return entry.getKey();
             }
         }
+        System.out.println("Selected dragon type: " + dragonChances.keySet().toArray()[0]);
 
         return null;
     }

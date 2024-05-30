@@ -1,23 +1,7 @@
 package org.blestit.avaloncore.Events;
 
 
-import io.github.WeloxiaDev.UltraMinions.api.UltraMinionsAPI;
 import io.github.WeloxiaDev.UltraMinions.api.events.MinionCollectEvent;
-import io.github.WeloxiaDev.UltraMinions.api.events.MinionLoadEvent;
-import io.github.WeloxiaDev.UltraMinions.api.events.MinionUnloadEvent;
-import io.github.WeloxiaDev.UltraMinions.database.PlayerData;
-import io.github.WeloxiaDev.UltraMinions.database.PlayerMinion;
-import io.github.WeloxiaDev.UltraMinions.database.minion.PlayerMinionUpgrade;
-import io.github.WeloxiaDev.UltraMinions.food.Food;
-import io.github.WeloxiaDev.UltraMinions.managers.MinionManager;
-import io.github.WeloxiaDev.UltraMinions.minions.Minion;
-import io.github.WeloxiaDev.UltraMinions.minions.levels.MinionLevel;
-import io.github.WeloxiaDev.UltraMinions.Main;
-import io.github.WeloxiaDev.UltraMinions.tiers.Tier;
-import io.github.WeloxiaDev.UltraMinions.upgrades.UpgradeFuel;
-import io.github.WeloxiaDev.UltraMinions.utils.MathUtils;
-import io.github.WeloxiaDev.UltraMinions.utils.NBTEditor;
-import io.github.WeloxiaDev.UltraMinions.utils.Utils;
 import com.willfp.ecoskills.skills.Skills;
 import com.willfp.ecoskills.api.EcoSkillsAPI;
 
@@ -52,48 +36,52 @@ public class SkillsXPMultiplier implements Listener {
                 Material material = item.getType();
                 double xpMultiplier = 1.0;
 
-                if (item.getEnchantments().size() > 0 && !material.equals(Material.HEART_OF_THE_SEA)) {
+                if (!item.getEnchantments().isEmpty() && !material.equals(Material.HEART_OF_THE_SEA)) {
                     xpMultiplier = 160.0;
                 }
-                if (item.getEnchantments().size() > 0 && material.equals(Material.HEART_OF_THE_SEA)) {
+                if (!item.getEnchantments().isEmpty() && material.equals(Material.HEART_OF_THE_SEA)) {
                     xpMultiplier = 9.0;
                 }
 
 
-                double miningXP = getSkillXP("mining", material) * amount * xpMultiplier;
-                if (miningXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("mining"), miningXP);
-                    break;
-                }
-                double combatXP = getSkillXP("combat", material) * amount * xpMultiplier;
-                if (combatXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("combat"), combatXP);
-                    break;
-                }
-                double woodcuttingXP = getSkillXP("woodcutting", material) * amount * xpMultiplier;
-                if (woodcuttingXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("woodcutting"), woodcuttingXP);
-                    break;
-                }
-                double farmingXP = getSkillXP("farming", material) * amount * xpMultiplier;
-                if (farmingXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("farming"), farmingXP);
-                    break;
-                }
-                double fishingXP = getSkillXP("fishing", material) * amount * xpMultiplier;
-                if (fishingXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("fishing"), fishingXP);
-                    break;
-                }
-                double zindanXP = getSkillXP("zindan", material) * amount * xpMultiplier;
-                if (zindanXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("zindan"), zindanXP);
-                    break;
-                }
-                double alchemyXP = getSkillXP("alchemy", material) * amount * xpMultiplier;
-                if (alchemyXP > 0) {
-                    EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("alchemy"), alchemyXP);
-                    break;
+                try {
+                    double miningXP = getSkillXP("mining", material) * amount * xpMultiplier;
+                    if (miningXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("mining"), miningXP);
+                        break;
+                    }
+                    double combatXP = getSkillXP("combat", material) * amount * xpMultiplier;
+                    if (combatXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("combat"), combatXP);
+                        break;
+                    }
+                    double woodcuttingXP = getSkillXP("woodcutting", material) * amount * xpMultiplier;
+                    if (woodcuttingXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("woodcutting"), woodcuttingXP);
+                        break;
+                    }
+                    double farmingXP = getSkillXP("farming", material) * amount * xpMultiplier;
+                    if (farmingXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("farming"), farmingXP);
+                        break;
+                    }
+                    double fishingXP = getSkillXP("fishing", material) * amount * xpMultiplier;
+                    if (fishingXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("fishing"), fishingXP);
+                        break;
+                    }
+                    double zindanXP = getSkillXP("zindan", material) * amount * xpMultiplier;
+                    if (zindanXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("zindan"), zindanXP);
+                        break;
+                    }
+                    double alchemyXP = getSkillXP("alchemy", material) * amount * xpMultiplier;
+                    if (alchemyXP > 0) {
+                        EcoSkillsAPI.gainSkillXP(p, Skills.INSTANCE.getByID("alchemy"), alchemyXP);
+                        break;
+                    }
+                } catch(NullPointerException ignored){
+
                 }
             }
         }

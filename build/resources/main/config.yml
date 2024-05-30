@@ -25,6 +25,82 @@ dragon:
     y: 85
     z: 5
 
+dragons:
+  koruyucu:
+    Display_name: "§5§lKoruyucu Ejderha"
+    Health: 9000000
+    Damage: 100.0
+    Speed: 1.0
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 1200
+    Chance: 16
+  yasli:
+    Display_name: "§5§lYaşlı Ejderha"
+    Health: 15000000
+    Damage: 100.0
+    Speed: 1.0
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 1200
+    Chance: 16
+  genc:
+    Display_name: "§5§lGenç Ejderha"
+    Health: 7500000
+    Damage: 100.0
+    Speed: 1.5
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 1200
+    Chance: 16
+  bilge:
+    Display_name: "§5§lBilge Ejderha"
+    Health: 9000000
+    Damage: 100.0
+    Speed: 1.5
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 900
+    Chance: 16
+  guvenilmez:
+    Display_name: "§5§lGüvenilmez Ejderha"
+    Health: 9000000
+    Damage: 100.0
+    Speed: 1.5
+    Armor: 0
+    SkillDamage: 350
+    SkillCooldown: 1200
+    Chance: 16
+  guclu:
+    Display_name: "§5§lGüçlü Ejderha"
+    Health: 9000000
+    Damage: 150.0
+    Speed: 1.5
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 1200
+    Chance: 16
+  kilgharrah:
+    Display_name: "§6§lKilgharrah Ejderhası"
+    Health: 12000000
+    Damage: 200.0
+    Speed: 1.2
+    Armor: 0
+    SkillDamage: 350
+    SkillCooldown: 1000
+    Chance: 2
+  kutsal:
+    Display_name: "§6§lKutsal Ejderha"
+    Health: 17500000
+    Damage: 150.0
+    Speed: 1.0
+    Armor: 0
+    SkillDamage: 200
+    SkillCooldown: 700
+    Chance: 2
+
+
+
 
 PlayerPing:
   Sound: "ENTITY_ARROW_HIT_PLAYER"
@@ -151,3 +227,87 @@ runner:
     - "1180 38 -898"
     - "1179 38 -898"
     - "1178 38 -898"
+skillxp:
+  mining:
+    - NETHERRACK:0.5
+    - GRAVEL:0.5
+    - FLINT:0.5
+    - ICE:0.5
+    - PACKED_ICE:4.5
+    - COBBLESTONE:1
+    - SAND:3
+    - RED_SAND:3
+    - END_STONE:3
+    - QUARTZ:3
+    - QUARTZ_BLOCK:12
+    - COAL:5
+    - COAL_BLOCK:45
+    - GLOWSTONE:7
+    - GLOWSTONE_DUST:1.75
+    - COAL:3
+    - IRON_INGOT:5
+    - IRON_BLOCK:45
+    - COPPER_INGOT:5
+    - COPPER_BLOCK:45
+    - GOLD_INGOT:6
+    - GOLD_BLOCK:54
+    - LAPIS_LAZULI:7
+    - LAPIS_BLOCK:63
+    - REDSTONE:7
+    - REDSTONE_BLOCK:63
+    - EMERALD:9
+    - EMERALD_BLOCK:81
+    - DIAMOND:10
+    - DIAMOND_BLOCK:90
+    - OBSIDIAN:20
+  combat:
+    - STRING:2
+    - SPIDER_EYE:3
+    - ROTTEN_FLESH:3
+    - BONE:2
+    - BLAZE_ROD:3
+    - GHAST_TEAR:5
+    - GUN_POWDER:3
+    - SLIME_BALL:2
+    - MAGMA_CREAM:2
+    - ENDER_PEARL:3
+  woodcutting:
+    - OAK_LOG:6
+    - BIRCH_LOG:6
+    - SPRUCE_LOG:6
+    - JUNGLE_LOG:6
+    - ACACIA_LOG:6
+    - DARK_OAK_LOG:6
+    - CRIMSON_STEM:14
+    - WARPED_STEM:14
+  farming:
+    - BAMBOO:1
+    - SWEET_BERRIES:3
+    - GLOW_BERRIES:3
+    - CACTUS:2
+    - GREEN_DYE:2
+    - SUGAR_CANE:2
+    - NETHER_WART:4
+    - COCOA_BEANS:4
+    - WHEAT:4
+    - HAY_BLOCK:36
+    - BEETROOT:5
+    - CARROT:4
+    - POTATO:4
+    - MELON_SLICE:0.4
+    - MELON:4
+    - PUMPKIN:4.5
+    - RED_MUSHROOM:6
+    - BROWN_MUSHROOM:6
+  fishing:
+    - COD:25
+    - SALMON:35
+    - PUFFERFISH:50
+    - TROPICAL_FISH:100
+    - CLAY_BALL:30
+    - CLAY:120
+  alchemy:
+    - NETHER_WART:0.5
+  zindan:
+    - NETHERITE_INGOT:25
+    - NETHERITE_BLOCK:225

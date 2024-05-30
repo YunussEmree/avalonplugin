@@ -62,7 +62,6 @@ public class DragonManager implements Listener {
 
                 dragonhp = 0;
 
-                dragonBossBar.removeAll();
 
                 for (Location altar : altars) {
                     EndPortalFrame frame = (EndPortalFrame) altar.getBlock().getBlockData();
@@ -73,8 +72,12 @@ public class DragonManager implements Listener {
                 createstatictik();
 
                 Bukkit.broadcastMessage("§8[§6Avalon§8] §cEjderha düzgün bir şekilde öldürülemediği için ödüller verilmiyor...");
+
+                dragonBossBar.removeAll();
             }
         }
+
+        dragonBossBar.removeAll();
     }
 
 }

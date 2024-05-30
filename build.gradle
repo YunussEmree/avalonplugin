@@ -1,9 +1,15 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
 plugins {
     id 'java'
 }
 compileJava.options.encoding = 'UTF-8'
 group = 'org.blestit.avaloncore'
-version = '2.1.6'
+version = '2.1.7'
 
 repositories {
     mavenCentral()
@@ -39,8 +45,8 @@ repositories {
         name = "dmulloy2-repo"
         url = "https://repo.dmulloy2.net/repository/public/"
     }
-    maven{
-        name = "auxilor-repo"
+    maven {
+        name = "com.willfp"
         url = "https://repo.auxilor.io/repository/maven-public/"
     }
 
@@ -54,7 +60,9 @@ dependencies {
     compileOnly "com.sk89q.worldguard:worldguard-bukkit:7.0.8-SNAPSHOT"
     compileOnly "com.github.MilkBowl:VaultAPI:1.7"
     compileOnly "io.lumine:Mythic-Dist:5.2.3"
-    compileOnly "com.willfp:EcoSkills:3.45.0"
+    compileOnly "com.willfp:EcoSkills:3.44.1"
+    compileOnly "com.willfp:eco:6.58.0"
+    implementation files('libs/UltraMinions-1.0.jar')
 }
 
 def targetJavaVersion = 17
