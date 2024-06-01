@@ -19,15 +19,9 @@ import static org.blestit.avaloncore.DragonOptimized.DragonReward.*;
 
 public class DragonManager implements Listener {
 
-    @EventHandler
-    public static void teleportDragon(PlayerCommandPreprocessEvent event) {
-        Player player = event.getPlayer();
-        String command = event.getMessage();
-        if (command.equalsIgnoreCase("/ejderfix")) {
-            if (player.hasPermission("avalon.ejdertp")) {
-                dragon.teleport(player.getLocation());
-            }
-        }
+
+    public static void teleportDragon(Player player) {
+            dragon.teleport(player.getLocation());
     }
 
 

@@ -69,6 +69,8 @@ public class Dragon implements EnderDragon{
         dragon.setCustomNameVisible(true);
 
         dragon.setGlowing(true);
+
+        dragon.setAI(true);
     }
 
 

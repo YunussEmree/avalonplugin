@@ -25,8 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static org.blestit.avaloncore.DragonOptimized.Dragon.*;
-import static org.blestit.avaloncore.DragonOptimized.DragonAltar.altars;
-import static org.blestit.avaloncore.DragonOptimized.DragonAltar.gozmapi;
+import static org.blestit.avaloncore.DragonOptimized.DragonAltar.*;
 import static org.blestit.avaloncore.DragonOptimized.DragonManager.teleportDragon;
 import static org.blestit.avaloncore.DragonOptimized.DragonSkillManager.thunder;
 
@@ -61,7 +60,7 @@ public class DragonReward implements Listener {
 
                     dragonBossBar.addPlayer(dragonDamager);
                     dragonBossBar.setTitle(Displayname + " - " + Math.round(((EnderDragon) event.getEntity()).getHealth() - event.getFinalDamage()));
-                    dragonBossBar.setProgress(((EnderDragon) event.getEntity()).getHealth() / Health);
+                    dragonBossBar.setProgress(Math.max(((EnderDragon) event.getEntity()).getHealth() / Health,0));
 
                     dragonhp = dragon.getHealth();
 
@@ -85,7 +84,7 @@ public class DragonReward implements Listener {
 
                     dragonBossBar.addPlayer(dragonDamager);
                     dragonBossBar.setTitle(Displayname + " - " + Math.round(((EnderDragon) event.getEntity()).getHealth() - event.getFinalDamage()));
-                    dragonBossBar.setProgress(((EnderDragon) event.getEntity()).getHealth() / Health);
+                    dragonBossBar.setProgress(Math.max(((EnderDragon) event.getEntity()).getHealth() / Health,0));
 
                     dragonhp = dragon.getHealth();
 
@@ -140,11 +139,7 @@ public class DragonReward implements Listener {
 
             dragonBossBar.removeAll();
 
-            for (Location altar : altars) {
-                EndPortalFrame frame = (EndPortalFrame) altar.getBlock().getBlockData();
-                frame.setEye(false);
-                altar.getBlock().setBlockData(frame);
-            }
+            removeeyes();
 
             createstatictik();
 

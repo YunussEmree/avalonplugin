@@ -132,6 +132,15 @@ public class DragonAltar implements Listener {
         }
     }
 
+
+    public static void removeeyes(){
+        for (Location altar : altars) {
+            EndPortalFrame frame = (EndPortalFrame) altar.getBlock().getBlockData();
+            frame.setEye(false);
+            altar.getBlock().setBlockData(frame);
+        }
+    }
+
     private void dispatchCommand(String command) {
         ConsoleCommandSender cs = Bukkit.getConsoleSender();
         Bukkit.dispatchCommand(cs, command);

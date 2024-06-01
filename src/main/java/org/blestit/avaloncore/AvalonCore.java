@@ -25,6 +25,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import static me.clip.placeholderapi.PlaceholderAPI.setPlaceholders;
 import static org.blestit.avaloncore.DragonOptimized.Dragon.Health;
+import static org.blestit.avaloncore.DragonOptimized.DragonAltar.removeeyes;
 import static org.blestit.avaloncore.DragonOptimized.DragonManager.killthedragon;
 import static org.blestit.avaloncore.DragonOptimized.DragonReward.dragonhp;
 import static org.blestit.avaloncore.DragonOptimized.DragonReward.hasarMapi;
@@ -82,6 +83,7 @@ public final class AvalonCore extends JavaPlugin {
     @Override
     public void onDisable() {
         killthedragon();
+        removeeyes();
         Runner.closetherunnerdoors(this);
         Parkour.closetheparkourdoors(this);
 
