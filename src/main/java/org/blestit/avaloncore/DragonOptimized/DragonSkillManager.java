@@ -267,10 +267,6 @@ public class DragonSkillManager implements Listener {
             player.setVelocity(knockbackDirection.multiply(10));
         }
     }
-
-
-
-
 }
 
 

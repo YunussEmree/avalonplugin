@@ -66,47 +66,6 @@ public class AFKDetect implements Listener {
         }.runTaskTimer(plugin, 1200, 99999);
 
 
-        String playername = player.getName();
 
-        //fixing chatcolor for old vip players
-        if (!player.hasPermission("avalon.kalicirenk")) {
-            ConsoleCommandSender cs = Bukkit.getConsoleSender();
-            Bukkit.dispatchCommand(cs, "chatcolor " + playername + " f");
-            System.out.println(playername + " adlı oyuncunun sohbet rengi sıfırlandı.");
-        }
-
-
-        if (!event.getPlayer().hasPlayedBefore()) {
-            new BukkitRunnable() {
-
-                public void run() {
-                    List<String> messages = plugin.getConfig().getStringList("firstjoinmessages.messages");
-
-                    int randomnumber = (int) Math.floor(Math.random() * messages.size());
-                    int oyuncusayi = (Bukkit.getOfflinePlayers().length);
-                    String msg = messages.get(randomnumber);
-                    String msgyeni = msg.replace("%player%", player.getName());
-                    String msgyeniyeni = msgyeni.replace("&", "§");
-                    String msgyeniyeniyeni = msgyeniyeni.replace("%playersize%", String.valueOf(oyuncusayi));
-                    Bukkit.broadcastMessage(msgyeniyeniyeni);
-
-                    player.sendMessage("§a|----------------------------------------------|");
-                    player.sendMessage("                 §6§lAvalona Hoşgeldin!");
-                    player.sendMessage("§e");
-                    player.sendMessage("§eBaşlangıçta §c/rehber §eve §c/sss §eyi okuyarak bilgi edinebilirsin.");
-                    player.sendMessage("§eOyunla ilgili aklına takılan tüm soruları §crehberlere §esorabilirsin.");
-                    player.sendMessage("§eKurallara uygun davranışlar sergilemeniz yararınıza olacaktır §c/kurallar§e.");
-                    player.sendMessage("§a|----------------------------------------------|");
-
-                    cancel();
-                }
-            }.runTaskTimer(plugin, 50, 99999);
-        }
-        //esas ban
-        if (event.getPlayer().getName().equals("yunus") || event.getPlayer().getName().equals("Treead") || event.getPlayer().getName().equals("esadsad") || event.getPlayer().getName().equals("Yalak123456") || event.getPlayer().getName().equals("NeYaptinLa") || event.getPlayer().getName().equals("plpljlk")) {
-            player.kickPlayer("Kara Liste");
-        }
     }
-
-
 }

@@ -210,6 +210,8 @@ public final class AvalonCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new SkillsXPMultiplier(this),this);
         Bukkit.getPluginManager().registerEvents(new VillagerTradeBlock(),this);
         Bukkit.getPluginManager().registerEvents(new WarpCommandsBlock(),this);
+        Bukkit.getPluginManager().registerEvents(new FirstJoinMessage(this),this);
+        Bukkit.getPluginManager().registerEvents(new FixChatColor(),this);
 
         //dragon
         Bukkit.getPluginManager().registerEvents(new DragonAltar(this),this);
