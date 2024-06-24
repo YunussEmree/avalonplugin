@@ -21,8 +21,6 @@ public class ChatPing implements Listener {
     }
 
 
-
-
     public static boolean hasPermission(Player player, String permission) {
         Permission p = new Permission(permission, PermissionDefault.FALSE);
         return player.hasPermission(p);
@@ -58,14 +56,18 @@ public class ChatPing implements Listener {
                     Sound pingsound1 = getPingSound();
 
 
-                    if (hasPermission(player, "avalon.rehberping")) {
-                        if (!hasPermission(player, "avalon.op")) {
-                            player.playSound(player.getEyeLocation(), pingsound1, 1, 1);
-                        }
+                    if (!hasPermission(player, "avalon.rehberping")) {
+                        return;
                     }
+                    if (hasPermission(player, "avalon.op")) {
+                        return;
+                    }
+                    if (player.getCustomName().contains("AFK")){
+                        return;
+                    }
+                    player.playSound(player.getEyeLocation(), pingsound1, 1, 1);
                 });
             }
-            //chat click msg
         }
     }
 

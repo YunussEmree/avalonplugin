@@ -219,8 +219,6 @@ public class DragonSkillManager implements Listener {
             fireball.setYield(4.0F); // This can be adjusted as needed
         }
     }
-
-
     public static void summonPhantoms(EnderDragon dragon) {
         double phantomHealth = dragon.getMaxHealth() * 0.05;
         List<Entity> entities = dragon.getNearbyEntities(50, 50, 50);

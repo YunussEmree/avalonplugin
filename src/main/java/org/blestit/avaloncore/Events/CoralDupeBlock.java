@@ -32,5 +32,4 @@ public class CoralDupeBlock implements Listener {
             }
         }
     }
-
 }

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AvalonCore.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AvalonCore.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AvalonPlugin.AvalonCore.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AvalonPlugin.AvalonCore.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/avaloncore.AvalonCore.main.iml" filepath="$PROJECT_DIR$/.idea/modules/avaloncore.AvalonCore.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/avalonplugin-master.AvalonCore.main.iml" filepath="$PROJECT_DIR$/.idea/modules/avalonplugin-master.AvalonCore.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.blestit.avaloncore.AvalonCore.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.blestit.avaloncore.AvalonCore.main.iml" />
     </modules>
