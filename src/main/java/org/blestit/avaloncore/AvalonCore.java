@@ -183,13 +183,12 @@ public final class AvalonCore extends JavaPlugin {
             if (identifier.equals("dragonmaxhealth")) {
                 return String.valueOf(Health);
             }
-
+            // TODO Switch Case
             return null;
         }
     }
 
     private void registerAllListeners(){
-
         Bukkit.getPluginManager().registerEvents(new AFKDetect(this),this);
         Bukkit.getPluginManager().registerEvents(new BlazeFireballBlock(this),this);
         Bukkit.getPluginManager().registerEvents(new ChatPing(this),this);
@@ -218,5 +217,6 @@ public final class AvalonCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new DragonManager(),this);
         Bukkit.getPluginManager().registerEvents(new DragonSkillManager(),this);
         Bukkit.getPluginManager().registerEvents(new DragonReward(this),this);
+        Bukkit.getPluginManager().registerEvents(new BlockingHopperDupe(),this);
     }
 }
