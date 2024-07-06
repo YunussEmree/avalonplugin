@@ -2,6 +2,7 @@ package org.blestit.avaloncore.Events;
 
 import com.willfp.ecoskills.api.EcoSkillsAPI;
 import com.willfp.ecoskills.stats.Stats;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.*;
 import org.bukkit.event.Event;
@@ -23,24 +24,24 @@ public class projectileDamageFix implements Listener {
         //blaze damage fix
         if (event.getDamager() instanceof Projectile projectile) {
             ProjectileSource projectileSource = projectile.getShooter();
+
             if (projectileSource instanceof Blaze blaze && blaze.getCustomName() != null) {
-                damagefix(event, blaze.getCustomName());
+                damagefix(event, blaze);
             }
             if(projectileSource instanceof Wither wither && wither.getCustomName() != null) {
-                damagefix(event, wither.getCustomName());
+                damagefix(event, wither);
             }
             if(projectileSource instanceof Ghast ghast && ghast.getCustomName() != null) {
-                damagefix(event, ghast.getCustomName());
+                damagefix(event, ghast);
             }
             if(projectileSource instanceof Skeleton skeleton && skeleton.getCustomName() != null) {
-                damagefix(event, skeleton.getCustomName());
+                damagefix(event, skeleton);
             }
         }
     }
 
 
-    public void damagefix(EntityDamageByEntityEvent event, String CustomName){
-
+    public void damagefix(EntityDamageByEntityEvent event, Entity projectileSource){
         ConfigurationSection projectileDamageFixSection = plugin.getConfig().getConfigurationSection("projectiledamagefix");
         if (projectileDamageFixSection != null) {
             for (String key : projectileDamageFixSection.getKeys(false)) {
@@ -53,14 +54,14 @@ public class projectileDamageFix implements Listener {
 
                     String nameStartsWith = section.getString("namestartswith");
                     int damage = section.getInt("damage");
-                    if (CustomName.startsWith(nameStartsWith)) {
+
+                    if (projectileSource.getCustomName().startsWith(nameStartsWith)) {
                         try{
                             double finaldamage = damage * ( 1 - (double) EcoSkillsAPI.getStatLevel(player, Stats.INSTANCE.getByID("defense")) / (EcoSkillsAPI.getStatLevel(player, Stats.INSTANCE.getByID("defense")) + 100));
                             event.setDamage(finaldamage);
+                            break;
                         } catch(NullPointerException ignored) {
                             return;
-                        } finally {
-                            break; // Match found, no need to check further
                         }
                     }
                 }
