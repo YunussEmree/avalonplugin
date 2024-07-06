@@ -311,3 +311,11 @@ skillxp:
   zindan:
     - NETHERITE_INGOT:25
     - NETHERITE_BLOCK:225
+
+projectiledamagefix:
+  1:
+    namestartswith: "§8[§cLv15§8] §cBlaze "
+    damage: 1000
+  2:
+    namestartswith: "§8[§cLv45§8] §cBlaze "
+    damage: 10000

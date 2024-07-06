@@ -218,5 +218,6 @@ public final class AvalonCore extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new DragonSkillManager(),this);
         Bukkit.getPluginManager().registerEvents(new DragonReward(this),this);
         Bukkit.getPluginManager().registerEvents(new BlockingHopperDupe(),this);
+        Bukkit.getPluginManager().registerEvents(new projectileDamageFix(this),this);
     }
 }
