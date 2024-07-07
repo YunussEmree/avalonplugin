@@ -2,20 +2,18 @@ package org.blestit.avaloncore.Events;
 
 import com.willfp.ecoskills.api.EcoSkillsAPI;
 import com.willfp.ecoskills.stats.Stats;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.*;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.projectiles.ProjectileSource;
 
-public class projectileDamageFix implements Listener {
+public class ProjectileDamageFix implements Listener {
     private JavaPlugin plugin;
 
-    public projectileDamageFix(JavaPlugin plugin) {
+    public ProjectileDamageFix(JavaPlugin plugin) {
         this.plugin = plugin;
     }
 
