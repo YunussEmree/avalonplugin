@@ -319,3 +319,18 @@ projectiledamagefix:
   2:
     namestartswith: "§8[§cLv45§8] §cBlaze "
     damage: 10000
+
+blazeboss:
+  rewardmessage:
+    """
+    &c▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+    &6               Blaze Mağlup Edildi
+    &f
+    &c&l       1. %top_name_1%: %top_damage_1%
+    &6&l       2. %top_name_2%: %top_damage_2%
+    &e&l       3. %top_name_3%: %top_damage_3%
+    &f
+    &b      Hasarın: %personal_damage%
+    &f
+    &c▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+    """;
