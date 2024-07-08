@@ -2,10 +2,10 @@ package org.blestit.avaloncore.Events;
 
 import org.blestit.avaloncore.AvalonCore;
 import org.blestit.avaloncore.Modules.ChatColorFix;
+import org.blestit.avaloncore.Modules.ExecuteCommandWithChance;
 import org.blestit.avaloncore.Modules.MapSorter;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Damageable;
-import org.bukkit.entity.Entity;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -13,9 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 public class AlazBossRewardManager implements Listener {
 
@@ -47,15 +45,24 @@ public class AlazBossRewardManager implements Listener {
 
         if (event.getEntity().getCustomName() == null) return;
 
-        if (event.getEntity().getCustomName().startsWith("§8[§cLv45§8] §cBlaze ")) {
+        String namestartswith = plugin.getConfig().getString("blazeboss.namestartswith");
+
+        assert namestartswith != null;
+        if (event.getEntity().getCustomName().startsWith(namestartswith)) {
 
             map = MapSorter.sortByValueDescending(map);
-            //todo sorting will be checked
             System.out.println("Blaze Mağlup Edildi ve Sıralama: " + map.toString());
 
             String rewardmessage = plugin.getConfig().getString("blazeboss.rewardmessage");
 
-            if(map.isEmpty()) return;
+            if (map.isEmpty()){
+                System.out.println("[AVALONCORE] No player has dealt damage to the boss");
+                return;
+            }
+            if(rewardmessage == null) {
+                System.out.println("[AVALONCORE] Reward message is null");
+                return;
+            }
 
             rewardmessage = switch (map.keySet().toArray().length) {
                 case (1) -> rewardmessage
@@ -82,23 +89,47 @@ public class AlazBossRewardManager implements Listener {
             rewardmessage = ChatColorFix.fixColor(rewardmessage);
 
             Set<String> players = map.keySet();
-            for (String player : players) {
-                if(player != null && Bukkit.getPlayer(player) != null){
+            for (int i = 0; i < players.size(); i++) {
+                String player = (String) players.toArray()[i];
+                if (player != null && Bukkit.getPlayer(player) != null) {
                     Bukkit.getPlayer(player).sendMessage(rewardmessage.replace("%personal_damage%", map.get(player).toString()));
                 }
+
             }
 
-
-
-
-
+            rewardPlayers(map);
             //todo rewards will be given
             map.clear();
         }
     }
 
+    public void rewardPlayers(Map<String, Integer> damageMap) {
+        ConfigurationSection rewardsSection = plugin.getConfig().getConfigurationSection("blazeboss.RewardCommands");
+        if (rewardsSection == null) return;
 
+        List<String> allPlayersRewards = rewardsSection.getStringList("all");
+        Set<String> playerNames = damageMap.keySet();
 
+        // Reward all players
+        playerNames.forEach(playerName -> allPlayersRewards.forEach(command -> ExecuteCommandWithChance.executeCommand(command, playerName)));
 
+        // Reward based on rank
+        String[] playersArray = playerNames.toArray(new String[0]);
+        for (int i = 0; i < playersArray.length; i++) {
+            int rank = i + 1; // Rank starts from 1
+            List<String> rewards = rewardsSection.getStringList(String.valueOf(rank));
+            if (!rewards.isEmpty()) {
+                int finalI = i;
+                rewards.forEach(command -> ExecuteCommandWithChance.executeCommand(command, playersArray[finalI]));
+            } else {
+                // Check if "none" is explicitly set for this rank
+                String noReward = rewardsSection.getString(String.valueOf(rank));
+                if ("none".equals(noReward)) {
+                    break; // Stop rewarding if "none" is encountered
+                }
+            }
+        }
+    }
 
 }
+

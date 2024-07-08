@@ -321,8 +321,9 @@ projectiledamagefix:
     damage: 10000
 
 blazeboss:
-  rewardmessage:
-    """
+  namestartswith: "§8[§cLv45§8] §cBlaze "
+  #This message will be sent to the players who damaged the blaze boss.
+  rewardmessage: |
     &c▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
     &6               Blaze Mağlup Edildi
     &f
@@ -333,4 +334,40 @@ blazeboss:
     &b      Hasarın: %personal_damage%
     &f
     &c▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-    """;
+  RewardCommands:
+    #reward commands. If you set "none" it won't reward. You can increase or decrease the number of rewards to be given to different people.
+    all:
+      - "give %player% coal %10"
+    #participation reward / reward everyone who deals damage
+    1:
+      - "give %player% apple 1 %20"
+      - "give %player% diamond 1"
+      - "give %player% gold_ingot 1"
+    #reward for most damager
+    2:
+      - "give %player% emerald 1"
+    #reward for secondnd person who inflicted the most damage
+    3:
+      - "give %player% iron_ingot 1"
+    #reward for thirrd person who inflicted the most damage
+    4:
+      - "give %player% iron_ingot 1"
+    #reward for fourth person who inflicted the most damage
+    5:
+      - "give %player% iron_ingot 1"
+    #reward for fifth person who inflicted the most damage
+    6:
+      - "give %player% iron_ingot 1"
+    #reward for sixth person who inflicted the most damage
+    7:
+      - "give %player% iron_ingot 1"
+    #reward for seventh person who inflicted the most damage
+    8:
+      - "none"
+    #reward for eight person who inflicted the most damage
+    9:
+      - "none"
+    #reward for ninth person who inflicted the most damage
+    10:
+      - "none"
+    #reward for tenth person who inflicted the most damage
