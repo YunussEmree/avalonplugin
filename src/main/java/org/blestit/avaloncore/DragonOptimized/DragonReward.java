@@ -262,8 +262,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KORUYUCU " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderkoruyucu 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderkoruyucu 1");
                     }
                     if (siralama.get() == 2)
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KORUYUCU " + key + " 6");
@@ -367,8 +367,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:YASLI " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderyasli 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderyasli 1");
                     }
                     if (siralama.get() == 2) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:YASLI " + key + " 6");
                     if (siralama.get() == 3) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:YASLI " + key + " 5");
@@ -468,8 +468,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GENC " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejdergenc 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejdergenc 1");
                     }
                     if (siralama.get() == 2) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GENC " + key + " 6");
                     if (siralama.get() == 3) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GENC " + key + " 5");
@@ -569,8 +569,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:BILGE " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderbilge 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderbilge 1");
                     }
                     if (siralama.get() == 2) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:BILGE " + key + " 6");
                     if (siralama.get() == 3) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:BILGE " + key + " 5");
@@ -671,8 +671,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUVENILMEZ " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderguvenilmez 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderguvenilmez 1");
                     }
                     if (siralama.get() == 2)
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUVENILMEZ " + key + " 6");
@@ -773,8 +773,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUCLU " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderguclu 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderguclu 1");
                     }
                     if (siralama.get() == 2) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUCLU " + key + " 6");
                     if (siralama.get() == 3) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:GUCLU " + key + " 5");
@@ -874,8 +874,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KUTSAL " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderkutsal 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderkutsal 1");
                     }
                     if (siralama.get() == 2) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KUTSAL " + key + " 6");
                     if (siralama.get() == 3) Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KUTSAL " + key + " 5");
@@ -984,8 +984,8 @@ public class DragonReward implements Listener {
 
                     if (siralama.get() == 1) {
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KILGHARRAH " + key + " 7");
-                        Bukkit.dispatchCommand(sender, "q point " + key + " add default.ejderkesme 1");
-                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add default.ejderkilgharrah 1");
+                        Bukkit.dispatchCommand(sender, "q point " + key + " add Gorevler.ejderkesme 1");
+                        Bukkit.dispatchCommand(sender, "q point AvalonGuard add Gorevler.ejderkilgharrah 1");
                     }
                     if (siralama.get() == 2)
                         Bukkit.dispatchCommand(sender, "mi give TOOL DRAGON:KILGHARRAH " + key + " 6");
