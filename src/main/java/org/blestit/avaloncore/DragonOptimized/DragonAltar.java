@@ -61,7 +61,7 @@ public class DragonAltar implements Listener {
                         int tamOlanlar = altarBloklar.stream().filter(altarBlok -> ((EndPortalFrame) altarBlok.getBlock().getBlockData()).hasEye()).toArray().length;
                         Bukkit.broadcastMessage("§d" + playername + " §5bir ejderha çağırma gözü yerleştirdi." + "§d (" + tamOlanlar + "/8)");
                         ConsoleCommandSender cs = Bukkit.getConsoleSender();
-                        dispatchCommand("q point "+playername+" add default.ecgkoyma 1");
+                        dispatchCommand("q point "+playername+" add Gorevler.ecgkoyma 1");
                         event.getPlayer().getInventory().getItemInMainHand().setAmount(event.getPlayer().getInventory().getItemInMainHand().getAmount() - 1);
                         world.playSound(event.getClickedBlock().getLocation(), Sound.ENTITY_PARROT_IMITATE_ENDER_DRAGON, 5, 5);
                         altars = altarBloklar;
